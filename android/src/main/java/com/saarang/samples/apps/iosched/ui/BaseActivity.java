@@ -148,6 +148,7 @@ public abstract class BaseActivity extends ActionBarActivity implements
     protected static final int NAVDRAWER_ITEM_VIDEO_LIBRARY = 4;
     protected static final int NAVDRAWER_ITEM_SIGN_IN = 5;
     protected static final int NAVDRAWER_ITEM_SETTINGS = 6;
+
     protected static final int NAVDRAWER_ITEM_EXPERTS_DIRECTORY = 7;
     protected static final int NAVDRAWER_ITEM_PEOPLE_IVE_MET = 8;
     protected static final int NAVDRAWER_ITEM_INVALID = -1;
@@ -460,6 +461,7 @@ public abstract class BaseActivity extends ActionBarActivity implements
 
         // Explore is always shown
         mNavDrawerItems.add(NAVDRAWER_ITEM_EXPLORE);
+        mNavDrawerItems.add(NAVDRAWER_ITEM_PEOPLE_IVE_MET);
 
         // If the attendee is on-site, show Map on the nav drawer
         if (attendeeAtVenue) {
@@ -844,12 +846,13 @@ public abstract class BaseActivity extends ActionBarActivity implements
                 startActivity(intent);
                 finish();
                 break;
+
+            */
             case NAVDRAWER_ITEM_PEOPLE_IVE_MET:
                 intent = new Intent(this, PeopleIveMetActivity.class);
                 startActivity(intent);
                 finish();
                 break;
-            */
             case NAVDRAWER_ITEM_SIGN_IN:
                 signInOrCreateAnAccount();
                 break;

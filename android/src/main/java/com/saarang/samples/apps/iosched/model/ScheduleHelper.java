@@ -173,7 +173,7 @@ public class ScheduleHelper {
             }
             item.subtitle = UIUtils.formatSessionSubtitle(
                     cursor.getString(SessionsQuery.ROOM_ROOM_NAME),
-                    cursor.getString(SessionsQuery.SESSION_SPEAKER_NAMES), mContext);
+                    "", mContext);
             item.backgroundImageUrl = cursor.getString(SessionsQuery.SESSION_PHOTO_URL);
             item.backgroundColor = cursor.getInt(SessionsQuery.SESSION_COLOR);
             item.hasGivenFeedback = (cursor.getInt(SessionsQuery.HAS_GIVEN_FEEDBACK) > 0);

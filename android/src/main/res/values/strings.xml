@@ -381,7 +381,7 @@
     <string name="navdrawer_item_my_schedule">My Schedule</string>
 
     <!-- Menu item to open the People I've Met screen [CHAR_LIMIT=20] -->
-    <string name="navdrawer_item_people_ive_met">People I\'ve Met</string>
+    <string name="navdrawer_item_people_ive_met">Help</string>
 
     <!-- Accessibility description of item to open the People I've Met screen -->
     <string name="navdrawer_item_people_ive_met_a11y">People I\'ve Met</string>
@@ -782,7 +782,7 @@
     <string name="title_office_hours">Office Hours</string>
 
     <!-- Title of the People I've Met screen, that shows a list of people with whom the user has exchanged contact information during the conference [CHAR_LIMIT=20]. -->
-    <string name="title_people_ive_met">People I\'ve Met</string>
+    <string name="title_people_ive_met">Help</string>
 
     <!-- Map breadcrumb text for navigating company showcase entries -->
     <string name="title_sandbox_detail">Company Information</string>

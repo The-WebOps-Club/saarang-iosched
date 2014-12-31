@@ -17,8 +17,13 @@
 package com.saarang.samples.apps.iosched.ui;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.view.View;
+import android.widget.Toast;
 
+import com.saarang.samples.apps.iosched.R;
 import com.saarang.samples.apps.iosched.util.PrefUtils;
 
 public class PeopleIveMetActivity extends BaseActivity {
@@ -33,13 +38,40 @@ public class PeopleIveMetActivity extends BaseActivity {
             return;
         }
 
+
+
+
         setContentView(com.saarang.samples.apps.iosched.R.layout.activity_people_ive_met);
+        CardView bug = (CardView) findViewById(R.id.card_view);
+        CardView rate = (CardView) findViewById(R.id.card_view1);
+        bug.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String[] email = {"webadmin@saarang.org"};
+
+
+                composeEmail(email, "Saarang Android app bug report") ;
+
+            }
+        });
+
+        rate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                final String appPackageName = "org.saarang.app"; // getPackageName() from Context or Activity object
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + appPackageName)));
+                }
+
+            }
+        });
 
         if (null == savedInstanceState) {
-            getFragmentManager().beginTransaction()
-                    .replace(com.saarang.samples.apps.iosched.R.id.container, PeopleIveMetFragment.newInstance(),
-                            FRAGMENT_PEOPLE_IVE_MET)
-                    .commit();
+
         }
 
         overridePendingTransition(0, 0);
@@ -67,12 +99,22 @@ public class PeopleIveMetActivity extends BaseActivity {
             PeopleIveMetFragment fragment = (PeopleIveMetFragment) getFragmentManager()
                     .findFragmentByTag(FRAGMENT_PEOPLE_IVE_MET);
             if (resultCode == RESULT_OK) {
-                fragment.retry();
+               // fragment.retry();
             } else {
-                fragment.showApiError();
+               // fragment.showApiError();
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    public void composeEmail(String[] addresses, String subject) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
         }
     }
 
