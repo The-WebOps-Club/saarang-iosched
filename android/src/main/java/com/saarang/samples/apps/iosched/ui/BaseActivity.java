@@ -461,7 +461,7 @@ public abstract class BaseActivity extends ActionBarActivity implements
 
         // Explore is always shown
         mNavDrawerItems.add(NAVDRAWER_ITEM_EXPLORE);
-        mNavDrawerItems.add(NAVDRAWER_ITEM_PEOPLE_IVE_MET);
+       // mNavDrawerItems.add(NAVDRAWER_ITEM_PEOPLE_IVE_MET);
 
         // If the attendee is on-site, show Map on the nav drawer
         if (attendeeAtVenue) {
