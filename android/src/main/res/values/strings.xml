@@ -1,5 +1,5 @@
 <!--
-  Copyright 2014 Google Inc. All rights reserved.
+  Copyright 2014 Saarang Inc. All rights reserved.
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Shown in the schedule to indicate how many sessions are available on that particular time slot. -->
     <plurals name="schedule_block_subtitle">
-        <item quantity="one"><xliff:g id="number_of_sessions">%1$d</xliff:g> available session</item>
-        <item quantity="other"><xliff:g id="number_of_sessions">%1$d</xliff:g> available sessions</item>
+        <item quantity="one"><xliff:g id="number_of_sessions">%1$d</xliff:g> available event</item>
+        <item quantity="other"><xliff:g id="number_of_sessions">%1$d</xliff:g> available events</item>
     </plurals>
 
     <!-- Shows as a notification on the system bar to alert user that some of their sessions are about to begin. -->
@@ -28,25 +28,25 @@
 
     <!-- Shown as a notification on the system bar to alert user that some of their sessions are about to begin. -->
     <plurals name="session_notification_ticker">
-        <item quantity="one">1 session is about to start.</item>
-        <item quantity="other">%d sessions are about to start.</item>
+        <item quantity="one">1 event is about to start.</item>
+        <item quantity="other">%d events are about to start.</item>
     </plurals>
 
     <!-- Indicates a certain number of sessions. -->
     <plurals name="session_plurals">
-        <item quantity="one">1 session</item>
-        <item quantity="other">%1$d sessions</item>
+        <item quantity="one">1 event</item>
+        <item quantity="other">%1$d events</item>
     </plurals>
 
     <!-- Title for the notification that alerts the user that some of their sessions are about to begin. -->
     <plurals name="session_notification_title">
-        <item quantity="one">1 session is starting in <xliff:g id="remaining_time">%1$d</xliff:g> min.</item>
-        <item quantity="other"><xliff:g id="num_sessions">%2$d</xliff:g> sessions are starting in <xliff:g id="remaining_time">%1$d</xliff:g> min.</item>
+        <item quantity="one">1 event is starting in <xliff:g id="remaining_time">%1$d</xliff:g> min.</item>
+        <item quantity="other"><xliff:g id="num_sessions">%2$d</xliff:g> events are starting in <xliff:g id="remaining_time">%1$d</xliff:g> min.</item>
     </plurals>
 
     <!-- Shown in the 'About' window of the app. -->
     <string name="about_body"><![CDATA[
-        <b>Google I/O 2014</b><br>
+        <b>Saarang 2015</b><br>
         Version %s<br><br>
         <a href="http://m.google.com/utos">Terms of Service</a><br><br>
         <a href="http://www.google.com/policies/privacy/">Privacy Policy</a>
@@ -59,7 +59,7 @@
     <string name="about_licenses">Open Source Licenses</string>
 
     <!-- Label on a button that the user clicks to accept a license agreement. -->
-    <string name="accept">Accept</string>
+    <string name="accept">Proceed</string>
 
     <!-- Label on a button that, when clicked, allows user to add an account to the device. -->
     <string name="add_account">Add Account</string>
@@ -69,11 +69,11 @@
 
     <!-- Accessibility description for a button that, when clicked, adds the currently
     displayed session to the user's schedule. -->
-    <string name="add_to_schedule_desc">Button to add session to your schedule</string>
+    <string name="add_to_schedule_desc">Button to add event to your schedule</string>
 
     <!-- Shown in a drop-down list on the main screen, indicating that all conference sessions
     are being displayed. -->
-    <string name="all_sessions">All Sessions</string>
+    <string name="all_sessions">All events</string>
 
     <!-- Shown in a drop-down list on the main screen, indicating that all conference themes
     are being displayed. Themes are major categories for sessions (the themes are Design,
@@ -82,8 +82,8 @@
 
     <!-- Shown in a drop-down list on the main screen, indicating that all conference topics
     are being displayed. Topics are major categories for sessions (example topics are: Android,
-    Chrome, Google APIs, Wearables, etc). -->
-    <string name="all_topics">All Topics</string>
+    Chrome, Saarang APIs, Wearables, etc). -->
+    <string name="all_topics">All Categories</string>
 
     <!-- Shown in a drop-down list on the main screen, indicating that all session types
     are being displayed. Some examples of session types are: session, office hours, code lab. -->
@@ -94,23 +94,23 @@
     <string name="all_years">All Years</string>
 
     <!-- Name of the application, shown in the application's title bar. -->
-    <string name="app_name">Google I/O 2014</string>
+    <string name="app_name">Saarang</string>
 
     <!-- Label on a button that is one possible answer to the question "Are you attending the
     conference in person in San Francisco or remotely via livestream?" -->
-    <string name="attending_in_person">In Person</string>
+    <string name="attending_in_person">Yes</string>
 
     <!-- Label on a button that is one possible answer to the question "Are you attending the
     conference in person in San Francisco or remotely via livestream?" -->
-    <string name="attending_remotely">Remotely</string>
+    <string name="attending_remotely">No</string>
 
-    <!-- Label on a button that allows the user to browse Google I/O Extended events that they
+    <!-- Label on a button that allows the user to browse Saarang Extended events that they
     might be interested in attending. -->
     <string name="browse_events">Browse events</string>
 
     <!-- Label on a button that allows the user to see what conference sessions are available
     at a particular time. -->
-    <string name="browse_sessions">Browse sessions...</string>
+    <string name="browse_sessions">Browse events...</string>
 
     <!-- Shown on Configure WiFi dialog, instructing user on what button to click. -->
     <string name="calltoaction_wifi_configure"><![CDATA[
@@ -144,7 +144,7 @@
 
     <!-- Label on a button that the user clicks to decline something (for example, a license
     agreement). -->
-    <string name="decline">Decline</string>
+    <string name="decline">Exit</string>
 
     <!-- Menu item that brings up the application's About screen -->
     <string name="description_about">About</string>
@@ -152,12 +152,12 @@
     <!-- Menu item that allows user to add a session to their schedule -->
     <string name="description_add_schedule">Add to schedule</string>
 
-    <!-- Menu item that allows the user to send feedback about the application to Google. This
+    <!-- Menu item that allows the user to send feedback about the application to Saarang. This
     says 'App Feedback' to clarify that it's feedback about the application, and not about a
     session. -->
     <string name="description_app_feedback">App Feedback</string>
 
-    <!-- Menu item that allows the user to send feedback about the application to Google -->
+    <!-- Menu item that allows the user to send feedback about the application to Saarang -->
     <string name="description_app_feedback_old">Feedback</string>
 
     <!-- Menu item that, when clicked, shows the captions on a video. -->
@@ -168,8 +168,8 @@
 
     <string name="description_debug" translatable="false">Debug and tests</string>
 
-    <!-- Menu item that takes the user to a page that shows a list of Google I/O Extended events. -->
-    <string name="description_i_o_extended">I/O Extended</string>
+    <!-- Menu item that takes the user to a page that shows a list of Saarang Extended events. -->
+    <string name="description_i_o_extended">Saarang Extended</string>
 
     <!-- Menu item that takes the user to the conference venue map screen -->
     <string name="description_map">Map</string>
@@ -194,7 +194,7 @@
 
     <!-- Explanation of wifi setup that appears in the WiFi setup dialog box. -->
     <string name="description_setup_wifi_body"><![CDATA[
-        Since you\'re attending in person, we can set up this device to access the conference Wi-Fi network (5Ghz only).
+        Since you\'re attending in person, we can set up this device to access the Saarang Wi-Fi network (5Ghz only).
         By configuring your Wi-Fi now, you\'ll help prevent network congestion.
     ]]></string>
 
@@ -202,10 +202,10 @@
     by email, social networks, etc. -->
     <string name="description_share">Share</string>
 
-    <!-- Menu item that allows the user to view the Google+ stream about a particular topic. This
-    appears as a menu item on a Sesssion screen, and opens the Google+ app to show the Google+
+    <!-- Menu item that allows the user to view the Saarang+ stream about a particular topic. This
+    appears as a menu item on a Sesssion screen, and opens the Saarang+ app to show the Saarang+
     posts about that session's topic. -->
-    <string name="description_social_stream">View Google+ stream</string>
+    <string name="description_social_stream">View Saarang+ stream</string>
 
     <!-- Accessibility description saying that the app's navigation drawer has been closed -->
     <string name="drawer_close">Close navigation drawer</string>
@@ -215,13 +215,13 @@
 
     <!-- Shown when trying to watch a video of a session, alerting user that no captions are
     available for that video. -->
-    <string name="empty_captions">No captions found for this session.</string>
+    <string name="empty_captions">No captions found for this event.</string>
 
     <!-- Shown on the Session page, alerting user that no details could be found for that session. -->
-    <string name="empty_session_detail">No session details found.</string>
+    <string name="empty_session_detail">No event details found.</string>
 
     <!-- Shown on the session search page, alerting user that no conference sessions could be found. -->
-    <string name="empty_sessions">No sessions found.</string>
+    <string name="empty_sessions">No events found.</string>
 
     <!-- Shown on several screens alerting user that no data is being shown because a background
     data synchronization is still in progress. Data will show as soon as the sync ends. -->
@@ -229,38 +229,38 @@
 
     <!-- Shown on a widget that normally displays upcoming sessions. This is shown after the
     conference, when there are no more sessions to show. -->
-    <string name="empty_widget_text">No more upcoming sessions.\nSee you next year!</string>
+    <string name="empty_widget_text">No more upcoming events.\nSee you next year!</string>
 
     <!-- Shown on a widget instructing user how to start using the widget. -->
-    <string name="empty_widget_text_signed_out">Touch the Google I/O 2014 logo above to sign in and begin using the app.</string>
+    <string name="empty_widget_text_signed_out">Touch the Saarang 2015 logo above to sign in and begin using the app.</string>
 
     <!-- Shown as a header on a list of sessions to indicate that the sessions that appear on that
     group have already ended. -->
-    <string name="ended_sessions">Ended sessions</string>
+    <string name="ended_sessions">Ended events</string>
 
-    <!-- Text on a drop-down list that allows the user to view Google Developer Experts from all cities (this is a filter). -->
+    <!-- Text on a drop-down list that allows the user to view Saarang Developer Experts from all cities (this is a filter). -->
     <string name="experts_directory_all_cities">All cities</string>
 
-    <!-- Text on a drop-down list that allows the user to view Google Developer Experts from all countries (this is a filter). -->
+    <!-- Text on a drop-down list that allows the user to view Saarang Developer Experts from all countries (this is a filter). -->
     <string name="experts_directory_all_countries">All countries</string>
 
-    <!-- Text that appears next to a person's name to indicate that they are attending Google I/O in person. Alternate translations might be: "present in person", "present at the event", "present onsite", etc. -->
-    <string name="experts_directory_attending">attending I/O</string>
+    <!-- Text that appears next to a person's name to indicate that they are attending Saarang in person. Alternate translations might be: "present in person", "present at the event", "present onsite", etc. -->
+    <string name="experts_directory_attending">attending Saarang</string>
 
-    <!-- Description of the Google Developer Expert program that appears in the Google Developer Expert directory screen, giving an introduction about what the term means. -->
-    <string name="experts_directory_header_body">The Google Developer Experts (GDE) title recognizes the outstanding developers who exhibit great expertise in one or more Google technologies and share it with the developer community. GDEs are gurus, mentors and evangelists; they create tutorials, code samples, and write books and blogs; they publish videos, drive community projects, and present at events large and small. These independent developers bring their real-world experience and knowledge working with Google technologies to developer communities worldwide.</string>
+    <!-- Description of the Saarang Developer Expert program that appears in the Saarang Developer Expert directory screen, giving an introduction about what the term means. -->
+    <string name="experts_directory_header_body">The Saarang Developer Experts (GDE) title recognizes the outstanding developers who exhibit great expertise in one or more Saarang technologies and share it with the developer community. GDEs are gurus, mentors and evangelists; they create tutorials, code samples, and write books and blogs; they publish videos, drive community projects, and present at events large and small. These independent developers bring their real-world experience and knowledge working with Saarang technologies to developer communities worldwide.</string>
 
-    <!-- Text on a button that dismisses the explanation about Google Developer Experts. -->
+    <!-- Text on a button that dismisses the explanation about Saarang Developer Experts. -->
     <string name="experts_directory_header_dismiss">Got it</string>
 
-    <!-- Title of the screen that gives an explanation about who are the Google Developer Experts. Alternate translations might be: "About the Google Developers Experts", or even just "Google Developer Experts" if nothing else sounds natural. -->
-    <string name="experts_directory_header_title">Who are the Google Developers Experts?</string>
+    <!-- Title of the screen that gives an explanation about who are the Saarang Developer Experts. Alternate translations might be: "About the Saarang Developers Experts", or even just "Saarang Developer Experts" if nothing else sounds natural. -->
+    <string name="experts_directory_header_title">Who are the Saarang Developers Experts?</string>
 
     <!-- Message that appears as feedback when the user has indicated that they are attending I/O in person. -->
-    <string name="explore_attending_in_person_toast">Attending I/O in person (you can change this in Settings)</string>
+    <string name="explore_attending_in_person_toast">Attending Saarang in person (you can change this in Settings)</string>
 
     <!-- Message that appears as feedback when the user has indicated that they are attending I/O remotely. -->
-    <string name="explore_attending_remotely_toast">Attending I/O remotely (you can change this in Settings)</string>
+    <string name="explore_attending_remotely_toast">Not attending Saarang (you can change this in Settings)</string>
 
     <!-- Label for a button to answer the question "Would you like to send feedback
     about this session?" which, when clicked, allows the user to send their feedback (ratings
@@ -270,17 +270,17 @@
     <!-- Text on a button that takes the user to the device's Settings screen. -->
     <string name="go_to_settings">Go to Settings</string>
 
-    <!-- Error message that shows when the user tries to use the app without a Google account
+    <!-- Error message that shows when the user tries to use the app without a Saarang account
     configured on their device. -->
     <string name="google_account_required_message">To use this application, you must have at least one Google account on your device.</string>
 
     <!-- Title for an error message that appears when the user tries to use the app without
-    a Google account configured on their device. -->
-    <string name="google_account_required_title">Google Account Required</string>
+    a Saarang account configured on their device. -->
+    <string name="google_account_required_title">Saarang Account Required</string>
 
     <!-- List dropdown item on the Video Library screen allowing the user to choose to see
-    the videos from a particular year of Google I/O. -->
-    <string name="google_i_o_year">I/O <xliff:g id="year">%1$d</xliff:g></string>
+    the videos from a particular year of Saarang. -->
+    <string name="google_i_o_year">Saarang <xliff:g id="year">%1$d</xliff:g></string>
 
     <!-- Label on a button that the user can click to dismiss an reminder or information message.
     For example "To scan an attendee's badge, hold your phone close to the badge for a few
@@ -288,7 +288,7 @@
     <string name="got_it">Got it</string>
 
     <!-- Conference hashtag -->
-    <string name="io14_hashtag" translatable="false">#io14</string>
+    <string name="io14_hashtag" translatable="false">#saarang15</string>
 
     <!-- Short text appended to the end of the session subtitle when the session will be live
     streamed. Constrained to 10 chars because the session subtitle should be small enough to fit
@@ -306,7 +306,7 @@
 
     <!-- Message shown in an error bar when there is a problem synchronizing the user's sessions
     to their account. Can be summarized as "Synchronization failed." if too long [CHAR_LIMIT=50] -->
-    <string name="login_failed_text">Could not sync your sessions due to an error.</string>
+    <string name="login_failed_text">Could not sync your events due to an error.</string>
 
     <!-- Button to retry a failed login attempt [CHAR_LIMIT=2 lines of 9 characters].
     If using multiple lines, separate them with "\n" ("Tentar\nde novo" for example)
@@ -342,10 +342,10 @@
     <!-- Message shown in a map popup to indicate the current session.
       Param %1$s: title of the next session
      -->
-    <string name="map_now_playing">Now playing:<![CDATA[<br><b>%1$s</b>]]></string>
+    <string name="map_now_playing">Currently going on:<![CDATA[<br><b>%1$s</b>]]></string>
 
     <!-- Clickable text in the map popup that leads to sessions in a room -->
-    <string name="map_touch_to_see_session">Touch to see Sessions</string>
+    <string name="map_touch_to_see_session">Touch to see Events</string>
 
     <!-- Label for map marker that indicates Moscone Center at a lower zoom level -->
     <string name="map_label_moscone" translatable="false">Moscone Center</string>
@@ -354,7 +354,7 @@
     <string name="more_information">More information</string>
 
     <!-- Text on a button that allows the user to browse more sessions -->
-    <string name="more_sessions">More Sessions</string>
+    <string name="more_sessions">More Events</string>
 
     <!-- Accessibility description for tab that shows the attendee's schedule for a given day. -->
     <string name="my_schedule_tab_desc_a11y">Tap to show your schedule for <xliff:g id="day">%1$s</xliff:g>.</string>
@@ -372,7 +372,7 @@
     <string name="navdrawer_item_explore">Explore</string>
 
     <!-- Accessibility description for menu item to open the Explore screen. -->
-    <string name="navdrawer_item_explore_a11y">Explore Google I/O</string>
+    <string name="navdrawer_item_explore_a11y">Explore Saarang</string>
 
     <!-- Menu item to open the Map screen [CHAR_LIMIT=20] -->
     <string name="navdrawer_item_map">Map</string>
@@ -393,7 +393,7 @@
     <string name="navdrawer_item_sign_in">Sign in</string>
 
     <!-- Menu item to open a screen that lists I/O related hashtags. Each hashtag, when clicked, will
-    open Google+ stream of posts that uses the hashtag [CHAR_LIMIT=20] -->
+    open Saarang+ stream of posts that uses the hashtag [CHAR_LIMIT=20] -->
     <string name="navdrawer_item_social">Social</string>
 
     <!-- Menu item to open a list of current and past I/O videos [CHAR_LIMIT=20] -->
@@ -401,11 +401,11 @@
 
     <!-- Text indicator that appears below the user's name, showing that they are
     attending the conference in person in San Francisco. -->
-    <string name="navdrawer_status_attending_in_person">Attending I/O in person</string>
+    <string name="navdrawer_status_attending_in_person">Attending Saarang in person</string>
 
     <!-- Text indicator that appears below the user's name, showing that they are
     attending the conference remotely via live streaming. -->
-    <string name="navdrawer_status_attending_remotely">Attending I/O remotely</string>
+    <string name="navdrawer_status_attending_remotely">Attending Saarang remotely</string>
 
     <!-- Header text for the Nearby EULA fragment -->
     <string name="nearby_eula_header">PhysicalWeb Experiment</string>
@@ -414,13 +414,13 @@
     <string name="physicalweb_intro_title">PhysicalWeb Experiment</string>
 
     <!-- Explanation of the PhysicalWeb experiment that appears on the 'Nearby' tab. -->
-    <string name="physicalweb_intro_text">This tab can show you links to content related to the conference features near your current location (e.g., partner websites, apps, demos and interactive content). To do this, the app will perform a Bluetooth LE scan of your surroundings to look for tags and send that information to a Google server for processing. Once activated, this will continue for the duration of the event, as long as your device has Bluetooth turned on. If you want to turn the feature off, visit the app\'s Settings menu or deactivate Bluetooth on the device. Keep in mind this is just an experiment with BLE, not a full product, so there may be some rough edges! It may not work if there is poor or no network connection, or if there is too much interference.\n\nWould you like to enable this feature now?</string>
+    <string name="physicalweb_intro_text"></string>
 
     <!-- Text shown on the Nearby tab when Bluetooth is off, to ask the user to turn it on. -->
     <string name="physical_web_bluetooth_off">This feature requires Bluetooth, but your device\'s Bluetooth is turned off. To use this feature, please enable Bluetooth in your device\'s Settings screen.</string>
 
     <!-- Message shown in the nearby screen when there are no nearby URLs. -->
-    <string name="no_nearby_urls">There are no PhysicalWeb beacons in your area. Try again when you are near a point of interest at Moscone during the conference.</string>
+    <string name="no_nearby_urls"></string>
 
     <!-- Message shown in a toast (popup) when the user clicks to change the active account but
     there is no network connection -->
@@ -432,11 +432,11 @@
 
     <!-- Message shown in the session explorer when the user applies a filter that results no
     session -->
-    <string name="no_matching_sessions">No matching sessions.</string>
+    <string name="no_matching_sessions">No matching events.</string>
 
     <!-- Message shown in the session explorer when the user selects a time slot that has no
     session  -->
-    <string name="no_matching_sessions_in_interval">No sessions available in this time slot.</string>
+    <string name="no_matching_sessions_in_interval">No events available in this time slot.</string>
 
     <!-- Message shown in the video library when the user applies a filter that results no video -->
     <string name="no_matching_videos">No matching videos.</string>
@@ -446,8 +446,8 @@
     "Give feedback" and "No, thanks" as buttons. [CHAR_LIMIT=20]-->
     <string name="no_thanks">No, thanks</string>
 
-    <!-- Button of a popup that shows up when the user has no Google account registered in the
-    device. The popup says that the user needs to have at least one Google account registered in the
+    <!-- Button of a popup that shows up when the user has no Saarang account registered in the
+    device. The popup says that the user needs to have at least one Saarang account registered in the
     device to be able to use the app. [CHAR_LIMIT=20] -->
     <string name="not_now">Not now</string>
 
@@ -488,7 +488,7 @@
     <string name="people_ive_met_edit_note_title">Notes</string>
 
     <!-- Explanation that appears when the user goes to the badge scanning screen and there are badges to show. -->
-    <string name="people_ive_met_empty">You haven\'t scanned anyone\'s badge yet. When you wish to exchange contact information with another attendee, hold your device over their badge for a few seconds and their Google+ profile will be added to this list (requires NFC).</string>
+    <string name="people_ive_met_empty">You haven\'t scanned anyone\'s badge yet. When you wish to exchange contact information with another attendee, hold your device over their badge for a few seconds and their Saarang+ profile will be added to this list (requires NFC).</string>
 
     <!-- Header for the People I've Met screen, explaining that the list below is a list of people whose badges the user has scanned at the conference. -->
     <string name="people_ive_met_header">Attendees whose badges you have scanned:</string>
@@ -496,30 +496,30 @@
     <!-- Menu item that allows the user to enter or edit a note about a person they have met at the conference. Alternate translations can be: "Edit Note", "-->
     <string name="people_ive_met_note">Note</string>
 
-    <!-- Error message that appears when the user tries to scan a conference attendee badge that does not contain a valid Google+ profile. 'Badge' is used in the sense of the identification badge that attendees at the event will carry with them. -->
-    <string name="people_ive_met_dummy_badge">This badge does not contain a link to a Google+ profile</string>
+    <!-- Error message that appears when the user tries to scan a conference attendee badge that does not contain a valid Saarang+ profile. 'Badge' is used in the sense of the identification badge that attendees at the event will carry with them. -->
+    <string name="people_ive_met_dummy_badge">This badge does not contain a link to a Saarang+ profile</string>
 
-    <!-- An application permission (this permission allows the application to modify the Google
+    <!-- An application permission (this permission allows the application to modify the Saarang
     I/O schedule data). Shows on a permissions dialog screen. -->
-    <string name="permission_write">Modify Google I/O schedule data</string>
+    <string name="permission_write">Modify Saarang schedule data</string>
 
-    <!-- Description of the Google+ +1 button for accessibility screen readers -->
+    <!-- Description of the Saarang+ +1 button for accessibility screen readers -->
     <string name="plus_one_description_standard">Touch to plus one.</string>
 
     <!-- Title in the Settings screen for the setting that enables sending of anonymous usage
-    statistics to Google. -->
+    statistics to Saarang. -->
     <string name="pref_analytics_enabled_title">Send anonymous usage statistics</string>
 
     <!-- Description in the Settings screen for the setting that enables sending of anonymous usage
-    statistics to Google. -->
+    statistics to Saarang. -->
     <string name="pref_analytics_enabled_description">Send anonymous statistics about app usage
-    to Google.</string>
+    to Saarang.</string>
 
-    <!-- Summary in the Settings screen for the "I will be at Google I/O" option -->
-    <string name="pref_attendee_at_venue_description">Display all sessions and on-site events. If unchecked, only live-streamed sessions will be shown.</string>
+    <!-- Summary in the Settings screen for the "I will be at Saarang" option -->
+    <string name="pref_attendee_at_venue_description">Display all events and on-site events. If unchecked, only relevant events will be shown.</string>
 
-    <!-- Title in the Settings screen for the "I will be at Google I/O" option -->
-    <string name="pref_attendee_at_venue_title">I\'ll be at Google I/O!</string>
+    <!-- Title in the Settings screen for the "I will be at Saarang" option -->
+    <string name="pref_attendee_at_venue_title">I\'ll be at Saarang!</string>
 
     <!-- Summary in the Settings screen for the "Show local times" option -->
     <string name="pref_local_times_description">Use your local time instead of the conference’s local time.</string>
@@ -534,38 +534,38 @@
     <string name="pref_nearby_title">Enable PhysicalWeb Experiment</string>
 
     <!-- Summary in the Settings screen for the "Notify me to send feedback about my sessions" option -->
-    <string name="pref_notify_feedback_description">Display notifications asking for your feedback about your selected sessions.</string>
+    <string name="pref_notify_feedback_description">Display notifications asking for your feedback about your selected events.</string>
 
     <!-- Title in the Settings screen for the "Notify me to send feedback about my sessions" option -->
     <string name="pref_notify_feedback_title">Notify me to send feedback</string>
 
     <!-- Summary in the Settings screen for the "Notify me when my sessions are about to begin" option -->
-    <string name="pref_notify_starred_sessions_description">Display a notification when your selected sessions are about to begin.</string>
+    <string name="pref_notify_starred_sessions_description">Display a notification when your selected events are about to begin.</string>
 
     <!-- Title in the Settings screen for the "Notify me when my sessions are about to begin" option -->
-    <string name="pref_notify_starred_sessions_title">Notify me about my sessions</string>
+    <string name="pref_notify_starred_sessions_title">Notify me about my events</string>
 
-    <!-- Title in the Settings screen for the "Synchronize my schedule with Google Calendar" option -->
-    <string name="pref_sync_with_calendar_description">Automatically sync your sessions to Google Calendar.</string>
+    <!-- Title in the Settings screen for the "Synchronize my schedule with Saarang Calendar" option -->
+    <string name="pref_sync_with_calendar_description">Automatically sync your events to Google Calendar.</string>
 
-    <!-- Summary in the Settings screen for the "Synchronize my schedule with Google Calendar" option -->
+    <!-- Summary in the Settings screen for the "Synchronize my schedule with Saarang Calendar" option -->
     <string name="pref_sync_with_calendar_title">Sync with Google Calendar</string>
 
     <!-- Text of a card shown in the session explorer that asks the user if he wants to see I/O
     extended events in his area. "Browse events" and "No, thanks" are the buttons shown in the card -->
-    <string name="question_i_o_extended">Would you like to know more about I/O Extended events happening near your location?</string>
+    <string name="question_i_o_extended">Would you like to know more about Saarang Extended events happening near your location?</string>
 
     <!-- Text of a card shown in the session explorer that asks the user if he will be attending I/O
     in person or remotely. "Remotely" and "In person" are the buttons shown in the card -->
-    <string name="question_local_or_remote">Are you attending I/O remotely or in person in San Francisco?</string>
+    <string name="question_local_or_remote">Are you attending Saarang 2015 at IIT Madras?</string>
 
     <!-- Text of a card shown in the session explorer after I/O has started that asks the user if
     he wants to configure the WiFi. "Yes!" and "No, thanks" are the buttons shown in the card -->
-    <string name="question_setup_wifi_after_i_o_start">Google I/O is here! Would you like to configure the conference WiFi now?</string>
+    <string name="question_setup_wifi_after_i_o_start">Saarang is here! Would you like to configure the Saarang WiFi now?</string>
 
     <!-- Text of a card shown in the session explorer before I/O has started that asks the user if
     he wants to configure the WiFi. "Yes!" and "No, thanks" are the buttons shown in the card -->
-    <string name="question_setup_wifi_before_i_o_start">Google I/O is coming up! Would you like to configure the conference WiFi now?</string>
+    <string name="question_setup_wifi_before_i_o_start">Saarang is coming up! Would you like to configure the Saarang WiFi now?</string>
 
     <!-- Section title for videos related to a particular event session -->
     <string name="related_videos">Related Videos</string>
@@ -574,7 +574,7 @@
     <string name="remove_from_schedule">In schedule</string>
 
     <!-- Accessibility content description for button used to remove the session from the user's schedule -->
-    <string name="remove_from_schedule_desc">Button to remove session from your schedule.</string>
+    <string name="remove_from_schedule_desc">Button to remove event from your schedule.</string>
 
     <!-- Button label allowing users to retry a failed operation -->
     <string name="retry">Retry</string>
@@ -586,20 +586,20 @@
     <string name="schedule_end_time">to <xliff:g id="endTime">%1$s</xliff:g></string>
 
     <!-- Hint that the user can search across sessions -->
-    <string name="search_hint">Search sessions</string>
+    <string name="search_hint">Search events</string>
 
     <!-- Search label that shows the type of data being searched for when the user clicks the
     Search button. -->
-    <string name="search_label">Google I/O sessions</string>
+    <string name="search_label">Saarang events</string>
 
-    <!-- A fragment of text appended to a Google calendar event indicating it was added by this application -->
-    <string name="session_calendar_suffix">- added by Google I/O Android app</string>
+    <!-- A fragment of text appended to a Saarang calendar event indicating it was added by this application -->
+    <string name="session_calendar_suffix">- added by Saarang Android app</string>
 
     <!-- Accessibility text announced as a response to pressing a button to add a session to the schedule. -->
-    <string name="session_details_a11y_session_added">Session added to your schedule</string>
+    <string name="session_details_a11y_session_added">Event added to your schedule</string>
 
     <!-- Accessibility text announced as a response to pressing a button to remove a session from the schedule. -->
-    <string name="session_details_a11y_session_removed">Session removed from your schedule</string>
+    <string name="session_details_a11y_session_removed">Event removed from your schedule</string>
 
     <!-- A session feedback option indicating the content was too advanced -->
     <string name="session_feedback_advanced">Too advanced</string>
@@ -620,7 +620,7 @@
     <string name="session_feedback_notification_text">Provide feedback for %1$s</string>
 
     <!-- Notification ticker text asking the user to provide session feedback -->
-    <string name="session_feedback_notification_ticker">Provide session feedback</string>
+    <string name="session_feedback_notification_ticker">Provide event feedback</string>
 
     <!-- A negative relevance session feedback option -->
     <string name="session_feedback_notrel">Not relevant</string>
@@ -638,7 +638,7 @@
     <string name="session_feedback_rel">Relevant</string>
 
     <!-- A session feedback section label asking for the session's relevance to the user's projects -->
-    <string name="session_feedback_relevance"> How relevant was this session to your projects?  </string>
+    <string name="session_feedback_relevance"> How relevant was this event to your projects?  </string>
 
     <!-- A session feedback section label asking for the speaker's quality -->
     <string name="session_feedback_speaker_quality">Speaker quality:</string>
@@ -650,15 +650,15 @@
     <string name="session_feedback_tell_us">Tell us!</string>
 
     <!-- Text indicating the session has ended -->
-    <string name="session_finished">Ended</string>
+    <string name="session_finished">Finished Events</string>
 
     <!-- Card text asking the user to provide session feedback -->
-    <string name="session_give_feedback_message">How was this session? Would you like to send feedback?</string>
+    <string name="session_give_feedback_message">How was this event? Would you like to send feedback?</string>
 
     <!-- Link text for the user to watch a live video stream of the session -->
     <string name="session_link_livestream">Watch Live</string>
 
-    <!-- Link text taking the user to the session's Google Moderator page -->
+    <!-- Link text taking the user to the session's Saarang Moderator page -->
     <string name="session_link_moderator">Moderator</string>
 
     <!-- Link text taking the user to the session's notes page -->
@@ -674,7 +674,7 @@
     <string name="session_links">More</string>
 
     <!-- Card text indicating the session is being broadcast right now and is available on live stream -->
-    <string name="session_live_now_message">This session is being broadcast live right now! Would you like to watch the live stream?</string>
+    <string name="session_live_now_message">This event is being broadcast live right now! Would you like to watch the live stream?</string>
 
     <!-- Short text indicating the session's live stream is live -->
     <string name="session_livestream_block">Live!</string>
@@ -695,7 +695,7 @@
     <string name="session_livestream_play_pause">Play / Pause</string>
 
     <!-- Actionbar title for I/O Live -->
-    <string name="session_livestream_title">I/O Live</string>
+    <string name="session_livestream_title">Saarang Live</string>
 
     <!-- Notification text that a session is starting in some number of minutes -->
     <string name="session_notification_text_1">starting in <xliff:g id="remaining_time">%1$d</xliff:g> min.</string>
@@ -704,13 +704,13 @@
     <string name="session_now">Now</string>
 
     <!-- A session feedback section label asking the user to rate the session overall -->
-    <string name="session_rating_label">Rate this session overall:</string>
+    <string name="session_rating_label">Rate this event overall:</string>
 
     <!-- Label for a session section listing the requirements for the session -->
     <string name="session_requirements">Requirements</string>
 
     <!-- Label for a session section listing the presenters at the session -->
-    <string name="session_speakers">Speakers</string>
+    <string name="session_speakers">Coordinators</string>
 
     <!-- Subtitle of a session indicating time interval and room number -->
     <string name="session_subtitle"><xliff:g id="time">%1$s</xliff:g> in <xliff:g id="room">%2$s</xliff:g></string>
@@ -722,38 +722,38 @@
     <string name="setup_wifi_yes">Yes!</string>
 
     <!-- Re-share template text indicating the user is watching I/O Live -->
-    <string name="share_livestream_template">Watching I/O Live: \'<xliff:g id="title">%1$s</xliff:g>\' at <xliff:g id="hashtags">%2$s</xliff:g> <xliff:g id="url">%3$s</xliff:g></string>
+    <string name="share_livestream_template">Watching Saarang Live: \'<xliff:g id="title">%1$s</xliff:g>\' at <xliff:g id="hashtags">%2$s</xliff:g> <xliff:g id="url">%3$s</xliff:g></string>
 
     <!-- Re-share template text indicating the user is at a particular session -->
-    <string name="share_template">Check out \'<xliff:g id="title">%1$s</xliff:g>\' at <xliff:g id="hashtags">%2$s</xliff:g> <xliff:g id="url">%3$s</xliff:g></string>
+    <string name="share_template">Participate in \'<xliff:g id="title">%1$s</xliff:g>\' at <xliff:g id="hashtags">%2$s</xliff:g> <xliff:g id="url">%3$s</xliff:g></string>
 
     <!-- Notification action text for snoozing the notification for some number of minutes -->
     <string name="snooze_x_min">Snooze <xliff:g id="remaining_time">%1$d</xliff:g> min.</string>
 
     <!-- Introductory text for a screen that shows several hashtags the user can click on to
-    see the corresponding stream on the Google+ application. -->
-    <string name="social_intro">Click on a hashtag to follow the conversation on Google+</string>
+    see the corresponding stream on the Saarang+ application. -->
+    <string name="social_intro">Click on a hashtag to follow the conversation on Saarang+</string>
 
     <!-- Speaker image content description -->
-    <string name="speaker_googleplus_profile">Google+ profile: <xliff:g id="speakername">%1$s</xliff:g></string>
+    <string name="speaker_googleplus_profile">Saarang+ profile: <xliff:g id="speakername">%1$s</xliff:g></string>
 
     <!-- Short text label indicating a grouping of themes -->
     <string name="themes">Themes</string>
 
     <!-- Text indicating the session is going to start in some number of minutes -->
-    <string name="time_hint_about_to_start_min">This session will start in <xliff:g id="minutes">%1$d</xliff:g> min.</string>
+    <string name="time_hint_about_to_start_min">This event will start in <xliff:g id="minutes">%1$d</xliff:g> min.</string>
 
-    <!-- Text indicating the session is going to start in less than 1 minute -->
-    <string name="time_hint_about_to_start_shortly">This session is about to start (less than 1 minute).</string>
+    <!-- Text indicating the event is going to start in less than 1 minute -->
+    <string name="time_hint_about_to_start_shortly">This event is about to start (less than 1 minute).</string>
 
     <!-- Text indicating the session has ended -->
-    <string name="time_hint_session_ended">This session has ended.</string>
+    <string name="time_hint_session_ended">This event has ended.</string>
 
     <!-- Text indicating the session just started -->
-    <string name="time_hint_started_just">This session is happening now! (just started)</string>
+    <string name="time_hint_started_just">This event is happening now! (just started)</string>
 
     <!-- Text indicating the session is in progress but has not completed -->
-    <string name="time_hint_started_min">This session is happening now! (started <xliff:g id="minutes">%1$d</xliff:g> min. ago)</string>
+    <string name="time_hint_started_min">This event is happening now! (started <xliff:g id="minutes">%1$d</xliff:g> min. ago)</string>
 
     <!-- Explanation text shown below the user's schedule clarifying the timezone used for display.
     For example, 'All times shown in UTC-7' -->
@@ -764,7 +764,7 @@
 
     <string name="title_activity_ble" translatable="false">Ble Activity</string>
 
-    <!-- Title text for the screen that shows a directory of Google Developer Experts, who are independent developers who are experts at Google technologies. This should be translated as just 'Experts' because it's smaller. [CHAR_LIMIT=20] -->
+    <!-- Title text for the screen that shows a directory of Saarang Developer Experts, who are independent developers who are experts at Saarang technologies. This should be translated as just 'Experts' because it's smaller. [CHAR_LIMIT=20] -->
     <string name="title_experts_directory">Experts</string>
 
     <string name="title_activity_debug_test_runner" translatable="false">Debug Test Runner</string>
@@ -791,10 +791,10 @@
     <string name="title_search">Search</string>
 
     <!-- Map breadcrumb text for navigating session entries -->
-    <string name="title_session_detail">Session Information</string>
+    <string name="title_session_detail">Event Information</string>
 
     <!-- Label for SessionFeedback activity -->
-    <string name="title_session_feedback">Session Feedback</string>
+    <string name="title_session_feedback">Event Feedback</string>
 
     <!-- Label for Settings activity -->
     <string name="title_settings">Settings</string>
@@ -806,13 +806,13 @@
     <string name="title_video_library">Video library</string>
 
     <!-- Label for exploration category which groups session topics -->
-    <string name="topics">Topics</string>
+    <string name="topics">Categories</string>
 
     <!-- Label for exploration category which groups session types -->
     <string name="types">Types</string>
 
     <!-- Text for a session subtitle indicating it does not have a room specified -->
-    <string name="unknown_room">(Unspecified Room)</string>
+    <string name="unknown_room">(Unspecified Venue)</string>
 
     <!-- Label on a button that, when clicked, will let the user update the application to
     a newer version. -->
@@ -822,10 +822,10 @@
     <string name="watch_now">Watch Now!</string>
 
     <!-- Medium-length welcome text indicating the subsequent text is important legal information -->
-    <string name="welcome_text">Before we begin, here is some important legal information regarding your use of this app. This will only take a minute!</string>
+    <string name="welcome_text">Saarang is the annual cultural festival of IIT Madras, and one of the top five best college festivals across the country. Over the years, Saarang has remained the preferred platform of an exhibition of culture, talent and competition for students from all over India, from the fields of dance, music, literature and more, all under one roof.\n\nFor four days in January, IIT Madras is transformed into a hub of activity, with a large number of students, participants, and passers-by who enjoy the amalgam of events, food stalls, workshops and music shows. </string>
 
     <!-- Short text welcoming the user to the application -->
-    <string name="welcome_to_google_i_o_app">Welcome to the Google I/O app!</string>
+    <string name="welcome_to_google_i_o_app">Welcome to Saarang 2015</string>
 
     <!-- Text for a button which will add a wi-fi network -->
     <string name="wifi_dialog_button_configure">Add WiFi Network</string>
@@ -835,7 +835,7 @@
 
     <!-- Toast failure message if the user's wifi couldn't be updated -->
     <string name="wifi_install_error_message">Sorry, unable to update WiFi configuration</string>
-    <string name="description_i_o_hunt">I/O Hunt</string>
+    <string name="description_i_o_hunt">Saarang</string>
 
 </resources>
 

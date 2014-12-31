@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal">
 
-                <com.google.samples.apps.iosched.ui.widget.NumberRatingBar
+                <com.saarang.samples.apps.iosched.ui.widget.NumberRatingBar
                     style="@style/FeedbackNumberRatingBar"
                     android:id="@+id/rating_bar_1" />
 
@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal">
 
-                <com.google.samples.apps.iosched.ui.widget.NumberRatingBar
+                <com.saarang.samples.apps.iosched.ui.widget.NumberRatingBar
                     style="@style/FeedbackNumberRatingBar"
                     android:id="@+id/rating_bar_2" />
 
@@ -141,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal">
 
-                <com.google.samples.apps.iosched.ui.widget.NumberRatingBar
+                <com.saarang.samples.apps.iosched.ui.widget.NumberRatingBar
                     style="@style/FeedbackNumberRatingBar"
                     android:id="@+id/rating_bar_3" />
 

@@ -23,7 +23,7 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.phone.MapActivity">
 
-    <com.google.samples.apps.iosched.ui.widget.ScrimInsetsFrameLayout
+    <com.saarang.samples.apps.iosched.ui.widget.ScrimInsetsFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/capture_insets_frame_layout"
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </com.google.samples.apps.iosched.ui.widget.ScrimInsetsFrameLayout>
+    </com.saarang.samples.apps.iosched.ui.widget.ScrimInsetsFrameLayout>
 
     <!-- Nav drawer -->
     <include layout="@layout/navdrawer" />

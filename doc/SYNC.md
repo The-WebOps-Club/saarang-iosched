@@ -20,7 +20,7 @@ loads data in JSON format from a URL specified in the configuration file.
 
 The sync process starts by making an HTTP GET request to load the manifest
 file. The URL is configured in the `MANIFEST_URL` constant in
-[Config.java](../android/src/main/java/com/google/samples/apps/iosched/Config.java).
+[Config.java](../android/src/main/java/com.saarang.samples.apps.iosched/Config.java).
 
 For Google I/O, we used Google Cloud Storage as the hosting service
 to host these JSON files. However, if you are running your own event,

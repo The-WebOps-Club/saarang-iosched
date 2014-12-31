@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.iosched.iowear;
+package com.saarang.samples.apps.iosched.iowear;
 
 import android.app.Activity;
 import android.graphics.Typeface;
@@ -22,7 +22,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.samples.apps.iosched.R;
+import com.saarang.samples.apps.iosched.R;
 
 /**
  * A simple activity to show that the process of collection and submission of a session feedback has

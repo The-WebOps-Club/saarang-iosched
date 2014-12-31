@@ -116,7 +116,7 @@ a session or a speaker changes its photo.
 
 Every remote image in IOSched is loaded through a special library, [Glide](https://github.com/bumptech/glide),
 that appropriately handles asynchronous loading and caching. We extended
-Glide with a custom [ImageLoader](../android/src/main/java/com/google/samples/apps/iosched/util/ImageLoader.java) that understands our
+Glide with a custom [ImageLoader](../android/src/main/java/com.saarang.samples.apps.iosched/util/ImageLoader.java) that understands our
 adaptive URL format. In particular, the inner class VariableWidthImageLoader
 contains the following snippet:
 

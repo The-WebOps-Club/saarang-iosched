@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.iosched.iowear;
+package com.saarang.samples.apps.iosched.iowear;
 
-import static com.google.samples.apps.iosched.iowear.utils.Utils.LOGD;
-import static com.google.samples.apps.iosched.iowear.utils.Utils.makeLogTag;
+import static com.saarang.samples.apps.iosched.iowear.utils.Utils.LOGD;
+import static com.saarang.samples.apps.iosched.iowear.utils.Utils.makeLogTag;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -27,12 +27,12 @@ import com.google.android.gms.wearable.DataMap;
 import com.google.android.gms.wearable.PutDataMapRequest;
 import com.google.android.gms.wearable.PutDataRequest;
 import com.google.android.gms.wearable.Wearable;
-import com.google.samples.apps.iosched.R;
-import com.google.samples.apps.iosched.iowear.utils.Utils;
-import com.google.samples.apps.iosched.iowear.fragments.FeedbackFragment;
-import com.google.samples.apps.iosched.iowear.fragments.RadioFragment;
-import com.google.samples.apps.iosched.iowear.fragments.StarFragment;
-import com.google.samples.apps.iosched.iowear.fragments.SubmitFragment;
+import com.saarang.samples.apps.iosched.R;
+import com.saarang.samples.apps.iosched.iowear.utils.Utils;
+import com.saarang.samples.apps.iosched.iowear.fragments.FeedbackFragment;
+import com.saarang.samples.apps.iosched.iowear.fragments.RadioFragment;
+import com.saarang.samples.apps.iosched.iowear.fragments.StarFragment;
+import com.saarang.samples.apps.iosched.iowear.fragments.SubmitFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;

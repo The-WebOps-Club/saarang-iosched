@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.iosched.iowear;
+package com.saarang.samples.apps.iosched.iowear;
 
 
-import com.google.samples.apps.iosched.R;
+import com.saarang.samples.apps.iosched.R;
 
 import android.app.Application;
 

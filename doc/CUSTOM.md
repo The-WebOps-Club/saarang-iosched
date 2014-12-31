@@ -66,7 +66,7 @@ resolution as needed.
 ## Set up Config.java
 The Config.java file is located at:
 
-   [android/src/main/java/com/google/samples/apps/iosched/Config.java](../android/src/main/java/com/google/samples/apps/iosched/Config.java)
+   [android/src/main/java/com.saarang.samples.apps.iosched/Config.java](../android/src/main/java/com.saarang.samples.apps.iosched/Config.java)
 
 This file controls most of the event-specific aspects of IOSched.
 Make sure to edit this file to reflect the configuration you need

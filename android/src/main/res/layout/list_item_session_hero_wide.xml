@@ -102,7 +102,7 @@
             android:layout_marginLeft="@dimen/explore_grid_padding">
 
             <!-- Message card -->
-            <com.google.samples.apps.iosched.ui.widget.MessageCardView
+            <com.saarang.samples.apps.iosched.ui.widget.MessageCardView
                 android:id="@+id/message_card"
                 android:layout_width="match_parent"
                 android:layout_margin="8dp"

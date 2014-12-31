@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.iosched.iowear;
+package com.saarang.samples.apps.iosched.iowear;
 
 /**
  * A simple interface for answering individual questions in a session feedback or submitting the

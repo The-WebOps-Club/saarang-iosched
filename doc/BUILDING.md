@@ -162,7 +162,7 @@ digits, letters and underscores.)_
 8. Enter the API key from Step 6, as a value for the `YOUTUBE_API_KEY` constant,
    into this file:  
     ```
-    android/src/main/java/com/google/samples/apps/iosched/Config.java
+    android/src/main/java/com.saarang.samples.apps.iosched/Config.java
     ```
 
 <hr>

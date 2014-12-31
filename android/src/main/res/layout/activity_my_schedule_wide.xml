@@ -30,7 +30,7 @@
 
         <include layout="@layout/toolbar_actionbar_with_headerbar" />
 
-        <com.google.samples.apps.iosched.ui.widget.MultiSwipeRefreshLayout
+        <com.saarang.samples.apps.iosched.ui.widget.MultiSwipeRefreshLayout
             android:id="@+id/swipe_refresh_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -75,7 +75,7 @@
                                 android:layout_marginBottom="16dp"
                                 style="@style/MyScheduleDayLabel" />
 
-                            <com.google.samples.apps.iosched.ui.widget.MyScheduleView
+                            <com.saarang.samples.apps.iosched.ui.widget.MyScheduleView
                                 android:id="@+id/my_schedule_first_day"
                                 android:orientation="vertical"
                                 android:layout_width="match_parent"
@@ -97,7 +97,7 @@
                                 android:layout_marginLeft="@dimen/keyline_1"
                                 style="@style/MyScheduleDayLabel" />
 
-                            <com.google.samples.apps.iosched.ui.widget.MyScheduleView
+                            <com.saarang.samples.apps.iosched.ui.widget.MyScheduleView
                                 android:id="@+id/my_schedule_second_day"
                                 android:layout_width="match_parent"
                                 android:orientation="vertical"
@@ -107,7 +107,7 @@
                 </LinearLayout>
             </ScrollView>
 
-        </com.google.samples.apps.iosched.ui.widget.MultiSwipeRefreshLayout>
+        </com.saarang.samples.apps.iosched.ui.widget.MultiSwipeRefreshLayout>
     </LinearLayout>
 
     <!-- Nav drawer -->

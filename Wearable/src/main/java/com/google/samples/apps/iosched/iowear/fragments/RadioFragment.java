@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.iosched.iowear.fragments;
+package com.saarang.samples.apps.iosched.iowear.fragments;
 
-import com.google.samples.apps.iosched.R;
-import com.google.samples.apps.iosched.iowear.QuestionModel;
-import com.google.samples.apps.iosched.iowear.WearableApplication;
+import com.saarang.samples.apps.iosched.R;
+import com.saarang.samples.apps.iosched.iowear.QuestionModel;
+import com.saarang.samples.apps.iosched.iowear.WearableApplication;
 
 import android.graphics.Typeface;
 import android.os.Bundle;

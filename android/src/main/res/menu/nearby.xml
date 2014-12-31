@@ -16,9 +16,9 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:iosched="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/menu_nearby"
+    <!--<item android:id="@+id/menu_nearby"
         android:title="@string/map_nearby_button"
         android:orderInCategory="1"
-        iosched:showAsAction="ifRoom"
-        iosched:actionLayout="@layout/nearby_button" />
+        iosched:showAsAction="never"
+        iosched:actionLayout="@layout/nearby_button" />-->
 </menu>

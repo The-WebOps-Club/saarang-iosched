@@ -24,7 +24,7 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.phone.MapActivity">
 
-    <com.google.samples.apps.iosched.ui.widget.ScrimInsetsFrameLayout
+    <com.saarang.samples.apps.iosched.ui.widget.ScrimInsetsFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/capture_insets_frame_layout"
@@ -42,7 +42,7 @@
 
         <include layout="@layout/toolbar_actionbar_translucent" />
 
-    </com.google.samples.apps.iosched.ui.widget.ScrimInsetsFrameLayout>
+    </com.saarang.samples.apps.iosched.ui.widget.ScrimInsetsFrameLayout>
 
     <LinearLayout android:id="@+id/map_detail_spacer"
         android:visibility="gone"
