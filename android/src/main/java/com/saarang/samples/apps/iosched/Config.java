@@ -84,11 +84,11 @@ public class Config {
     public static final long DAY_MILLIS = 24 * HOUR_MILLIS;
 
     // OAuth 2.0 related config
-    public static final String APP_NAME = "Saarang-Android";
+    public static final String APP_NAME = "light-lambda-567";
     public static final String API_KEY = "AIzaSyDu5ETOXBJVV5Fn6hLz0qvPIhuIBTDJ7Zo";
 
     // Announcements
-    public static final String ANNOUNCEMENTS_PLUS_ID = "";
+    public static final String ANNOUNCEMENTS_PLUS_ID = "116919114883225184759";
 
     // YouTube API config
     public static final String YOUTUBE_API_KEY = "AIzaSyDu5ETOXBJVV5Fn6hLz0qvPIhuIBTDJ7Zo";
@@ -104,15 +104,15 @@ public class Config {
     public static final String WIFI_PASSPHRASE = "letsdothis";
 
     // GCM config
-    public static final String GCM_SERVER_PROD_URL = "";
-    public static final String GCM_SERVER_URL = "";
+    public static final String GCM_SERVER_PROD_URL = "https://light-lambda-567.appspot.com";
+    public static final String GCM_SERVER_URL = "https://light-lambda-567.appspot.com";
 
     // the GCM sender ID is the ID of the app in Google Cloud Console
     public static final String GCM_SENDER_ID = "318678647954";
 
     // The registration api KEY in the gcm server (configured in the GCM
     // server's AuthHelper.java file)
-    public static final String GCM_API_KEY = "";
+    public static final String GCM_API_KEY = "AIzaSyDu5ETOXBJVV5Fn6hLz0qvPIhuIBTDJ7Zo";
 
     // When do we start to offer to set up the user's wifi?
     public static final long WIFI_SETUP_OFFER_START =

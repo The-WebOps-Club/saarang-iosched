@@ -18,8 +18,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.saarang.samples.apps.iosched"
-    android:versionCode="228"
-    android:versionName="2.2.8"
+    android:versionCode="230"
+    android:versionName="2.3.0"
     android:installLocation="auto">
 
     <uses-sdk
