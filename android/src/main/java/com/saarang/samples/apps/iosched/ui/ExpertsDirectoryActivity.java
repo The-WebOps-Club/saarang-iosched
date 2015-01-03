@@ -16,50 +16,41 @@
 
 package com.saarang.samples.apps.iosched.ui;
 
-import android.app.Fragment;
-import android.app.LoaderManager;
-import android.content.CursorLoader;
+import android.app.ProgressDialog;
+import android.content.Context;
+
 import android.content.Intent;
-import android.content.Loader;
-import android.database.Cursor;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.ListView;
+import android.widget.Toast;
 
-import com.saarang.samples.apps.iosched.Config;
-import com.saarang.samples.apps.iosched.provider.ScheduleContract;
-import com.saarang.samples.apps.iosched.ui.widget.DrawShadowFrameLayout;
-import com.saarang.samples.apps.iosched.util.AnalyticsManager;
-import com.saarang.samples.apps.iosched.util.UIUtils;
 
+import org.apache.http.NameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Locale;
+import java.util.List;
 
-public class ExpertsDirectoryActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+import com.saarang.samples.apps.iosched.R;
+import com.saarang.samples.apps.iosched.util.PrefUtils;
+
+public class ExpertsDirectoryActivity extends BaseActivity {
+    private static final String NAVDRAWER_ITEM_EXPERTS_DIRECTORY = "Sponsors";
+
     private static final String SCREEN_LABEL = "ExpertsDirectory";
-
-    /**
-     * State key for the country currently selected in the spinner
-     */
-    private static final String STATE_CURRENT_COUNTRY = "current_country";
-
-    /**
-     * State key for the city currently selected in the spinner
-     */
-    private static final String STATE_CURRENT_CITY = "current_city";
-
-    private Spinner mFilterCountriesSpinner;
-    private Spinner mFilterCitiesSpinner;
-
-    private String mCurrentCountry;
-    private String mCurrentCity;
-
-    private DrawShadowFrameLayout mDrawShadowFrameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,339 +61,211 @@ public class ExpertsDirectoryActivity extends BaseActivity implements LoaderMana
         }
 
         setContentView(com.saarang.samples.apps.iosched.R.layout.activity_experts_directory);
-        AnalyticsManager.sendScreenView(SCREEN_LABEL);
+        Log.d("hai dude", "hai");
+        new getSponsors().execute();
 
-        mDrawShadowFrameLayout = (DrawShadowFrameLayout) findViewById(com.saarang.samples.apps.iosched.R.id.main_content);
-        mFilterCountriesSpinner = (Spinner) findViewById(com.saarang.samples.apps.iosched.R.id.filter_countries);
-        mFilterCitiesSpinner = (Spinner) findViewById(com.saarang.samples.apps.iosched.R.id.filter_cities);
 
-        // Restore saved states
-        if (null != savedInstanceState) {
-            mCurrentCountry = savedInstanceState.getString(STATE_CURRENT_COUNTRY);
-            mCurrentCity = savedInstanceState.getString(STATE_CURRENT_CITY);
-        }
-
-        // Start loading data
-        getLoaderManager().restartLoader(CountriesQuery.TOKEN, null, this);
-
-        overridePendingTransition(0, 0);
-        registerHideableHeaderView(findViewById(com.saarang.samples.apps.iosched.R.id.headerbar));
-    }
-
-    private static String getCountryName(String countryCode) {
-        return new Locale("", countryCode).getDisplayCountry();
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        if (null != mCurrentCountry) {
-            outState.putString(STATE_CURRENT_COUNTRY, mCurrentCountry);
-        }
-        if (null != mCurrentCity) {
-            outState.putString(STATE_CURRENT_CITY, mCurrentCity);
-        }
-    }
-
-    @Override
-    protected void onActionBarAutoShowOrHide(boolean shown) {
-        super.onActionBarAutoShowOrHide(shown);
-        mDrawShadowFrameLayout.setShadowVisible(shown, shown);
     }
 
     @Override
     protected int getSelfNavDrawerItem() {
-        return NAVDRAWER_ITEM_EXPERTS_DIRECTORY;
+        return BaseActivity.NAVDRAWER_ITEM_EXPERTS_DIRECTORY;
     }
-
     @Override
     protected void onResume() {
         super.onResume();
         invalidateOptionsMenu();
-        if (Config.hasExpertsDirectoryExpired()) {
-            startActivity(new Intent(this, BrowseSessionsActivity.class));
+        // If the user is attending remotely, redirect them to 'Explore'
+        if (!PrefUtils.isAttendeeAtVenue(this)) {
+            startActivity(new Intent(this, ExpertsDirectoryActivity.class));
             finish();
         }
-
-        Fragment frag = getFragmentManager().findFragmentById(com.saarang.samples.apps.iosched.R.id.experts_fragment);
-        if (frag != null) {
-            // configure expert fragment's top clearance to take our overlaid controls (Action Bar
-            // and spinner box) into account.
-            int actionBarSize = UIUtils.calculateActionBarSize(this);
-            int filterBarSize = getResources().getDimensionPixelSize(com.saarang.samples.apps.iosched.R.dimen.filterbar_height);
-            mDrawShadowFrameLayout.setShadowTopOffset(actionBarSize + filterBarSize);
-            ((ExpertsDirectoryFragment) frag).setContentTopClearance(actionBarSize + filterBarSize
-                    + getResources().getDimensionPixelSize(com.saarang.samples.apps.iosched.R.dimen.explore_grid_padding));
-        }
     }
 
-    @Override
-    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        switch (id) {
-            case CountriesQuery.TOKEN: {
-                return new CursorLoader(this,
-                        ScheduleContract.Experts.CONTENT_URI
-                                .buildUpon()
-                                .appendQueryParameter(ScheduleContract.QUERY_PARAMETER_DISTINCT, "true")
-                                .build(),
-                        CountriesQuery.PROJECTION, null, null, ScheduleContract.Experts.EXPERT_COUNTRY
-                );
+
+    class getSponsors extends AsyncTask<String, String, String> {
+        private ProgressDialog pDialog;
+        JSONArray MainObject;
+        JSONParser jsonParser = new JSONParser();
+        int status;
+
+
+        @Override
+        protected String doInBackground(String... params) {
+            // TODO Auto-generated method stub
+           if (!loadpref("firstjsonloadsucces")) {
+            // String url = "http://10.0.2.2:80/JSON/wall.php";
+            String url = "http://erp.saarang.org/api/mobile/display_spons/";
+            // "api/mobile/walls/";
+            List<NameValuePair> paramse = new ArrayList<NameValuePair>();
+
+            JSONObject json = jsonParser.makeHttpRequest(url,false, "GET", paramse,
+                    null);
+            if(json!=null) {
+
+
+                SharedPreferences sharedPrefjson = getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPrefjson.edit();
+                editor.putString("user_name", json.toString());
+                editor.commit();
+                Log.d("ghj", json.toString());
+                savepref("firstjsonloadsucces",true);
             }
-            case CitiesQuery.TOKEN: {
-                String selection = null;
-                String[] selectionArgs = null;
-                if (null != args && null != (mCurrentCountry
-                        = args.getString(ScheduleContract.Experts.EXPERT_COUNTRY))) {
-                    selection = ScheduleContract.Experts.EXPERT_COUNTRY + " = ?";
-                    selectionArgs = new String[]{mCurrentCountry};
-                } else {
-                    mCurrentCity = null;
+            else{
+                savepref("inetrnettoast",true);
+
+
+            }
+           }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String file_url) {
+
+            if(loadpref("inetrnettoast")){ Toast.makeText(
+                    getBaseContext(),
+                    "No internet connection. Check your connection and "
+                            + "try again later", Toast.LENGTH_SHORT).show();
+            }
+          if(loadpref("firstjsonloadsucces"))  {
+
+              SharedPreferences sharedPrefjson = getPreferences(Context.MODE_PRIVATE);
+              String uname = sharedPrefjson.getString("user_name", null);
+              JSONArray theArray =null;
+              try {
+
+                  JSONObject jObj;
+                  jObj = new JSONObject(uname);
+
+
+                  theArray = jObj.getJSONArray("data");
+
+              } catch (JSONException e) {
+                  e.printStackTrace();
+              }
+
+              if (true) {
+                    final String id[] = new String[theArray.length()];
+                   final double priority[] = new double[theArray.length()];
+                    final String tittle[] = new String[theArray.length()];
+
+                    final String logolink[] = new String[theArray.length()];
+
+                    final String link[] = new String[theArray.length()];
+
+
+                    try {
+                        for (int i = 0; i < theArray.length(); i++) {
+                            JSONObject jsonInside = theArray.getJSONObject(i);
+                            id[i] = jsonInside.getString("id");
+                            priority[i] = jsonInside.getDouble("priority");
+                            tittle[i] = jsonInside.getString("title");
+                            logolink[i] = jsonInside.getString("logo");
+                            link[i] = jsonInside.getString("sponsor_link");
+
+
+                        }
+                        int input = theArray.length();
+
+
+                        for(int index = 0; index<input;index++)
+                        {
+                            for(int index1 = 0; index1<input-1;index1++)
+                            {
+                                if(priority[index1]>priority[index1+1])
+                                {
+
+                                    double temp_prio = priority[index1];
+                                    String temp_logolink = logolink[index1];
+                                    String temp_title =tittle[index1];
+                                    String temp_link =link[index1];
+                                    priority[index1] = priority[index1+1];
+                                    logolink[index1] = logolink[index1+1];
+                                    tittle[index1] = tittle[index1+1];
+                                    link[index1] = link[index1+1];
+
+
+                                    priority[index1+1] = temp_prio;
+                                    logolink[index1+1] = temp_logolink;
+                                    tittle[index1+1] = temp_title;
+                                    link[index1+1] = temp_link;
+
+
+
+
+                                }
+                            }
+                        }
+                        for (int i = 0; i < logolink.length / 2; i++) {
+                            String temp = logolink[i];
+                            logolink[i] = logolink[logolink.length - 1 - i];
+                            logolink[logolink.length - 1 - i] = temp;
+                        }
+                        for (int i = 0; i < tittle.length / 2; i++) {
+                            String temp = tittle[i];
+                            tittle[i] = tittle[tittle.length - 1 - i];
+                            tittle[tittle.length - 1 - i] = temp;
+                        }
+                        for (int i = 0; i < link.length / 2; i++) {
+                            String temp = link[i];
+                            link[i] = link[link.length - 1 - i];
+                            link[link.length - 1 - i] = temp;
+                        }
+
+
+
+                        for (int i=0 ;i<input;i++) {
+                            Log.d("", String.valueOf(priority[i]));
+
+                        }
+
+                        SponsorsList adapter = new SponsorsList(
+                                ExpertsDirectoryActivity.this, id, tittle, logolink, link);
+                        ListView list = (ListView) findViewById(
+                                R.id.listview);
+                        list.setAdapter(adapter);
+                        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                            @Override
+                            public void onItemClick(AdapterView<?> parent,
+                                                    View view, int position, long useless_id) {
+
+                                String url = link[position];
+
+                                Uri webpage = Uri.parse(url);
+                                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                                if (intent.resolveActivity(getPackageManager()) != null) {
+                                    startActivity(intent);
+                                }
+
+
+                            }
+                        });
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
                 }
-                return new CursorLoader(this,
-                        ScheduleContract.Experts.CONTENT_URI
-                                .buildUpon()
-                                .appendQueryParameter(ScheduleContract.QUERY_PARAMETER_DISTINCT, "true")
-                                .build(),
-                        CitiesQuery.PROJECTION, selection, selectionArgs,
-                        ScheduleContract.Experts.EXPERT_CITY
-                );
-            }
-        }
-        return null;
-    }
 
-    @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
-        switch (loader.getId()) {
-            case CountriesQuery.TOKEN: {
-                String[] countries = getStringArray(cursor, CountriesQuery.EXPERT_COUNTRY);
-                CountriesAdapter adapter = new CountriesAdapter(countries);
-                mFilterCountriesSpinner.setAdapter(adapter);
-                if (null != mCurrentCountry) {
-                    mFilterCountriesSpinner.setSelection(Arrays.binarySearch(countries, mCurrentCountry) + 1);
-                }
-                mFilterCountriesSpinner.setOnItemSelectedListener(adapter);
-                break;
-            }
-            case CitiesQuery.TOKEN: {
-                String[] cities = getStringArray(cursor, CitiesQuery.EXPERT_CITY);
-                CitiesAdapter adapter = new CitiesAdapter(cities);
-                mFilterCitiesSpinner.setAdapter(adapter);
-                if (null != mCurrentCity) {
-                    mFilterCitiesSpinner.setSelection(Arrays.binarySearch(cities, mCurrentCity) + 1);
-                }
-                // Hide the spinner when there is only one city in this country
-                if (1 == cities.length) {
-                    mFilterCitiesSpinner.setSelection(1);
-                    mFilterCitiesSpinner.setVisibility(View.INVISIBLE);
-                } else {
-                    mFilterCitiesSpinner.setVisibility(View.VISIBLE);
-                }
-                mFilterCitiesSpinner.setOnItemSelectedListener(adapter);
-                break;
             }
         }
     }
+    private void savepref(String event,boolean key ){
 
-    private String[] getStringArray(Cursor cursor, int columnIndex) {
-        String[] countries = new String[cursor.getCount()];
-        int i = 0;
-        while (cursor.moveToNext()) {
-            countries[i++] = cursor.getString(columnIndex);
-        }
-        return countries;
+        SharedPreferences fav= PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor edit =fav.edit();
+        edit.putBoolean(event, key);
+        edit.commit();
+
+
     }
+    public  Boolean loadpref(String event){
 
-    @Override
-    public void onLoaderReset(Loader<Cursor> loader) {
-        switch (loader.getId()) {
-            case CountriesQuery.TOKEN: {
-                mFilterCitiesSpinner.setAdapter(null);
-                break;
-            }
-            case CitiesQuery.TOKEN: {
-                mFilterCitiesSpinner.setAdapter(null);
-                break;
-            }
-        }
-    }
-
-    /**
-     * An adapter for countries in the spinner.
-     */
-    private class CountriesAdapter extends BaseAdapter implements AdapterView.OnItemSelectedListener {
-        private final String[] mCountries;
-
-        public CountriesAdapter(String[] countries) {
-            mCountries = countries;
-        }
-
-        @Override
-        public int getCount() {
-            return mCountries.length + 1;
-        }
-
-        @Override
-        public String getItem(int position) {
-            if (0 == position) {
-                return null;
-            }
-            return mCountries[position - 1];
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getDropDownView(int position, View view, ViewGroup parent) {
-            if (view == null) {
-                view = LayoutInflater.from(ExpertsDirectoryActivity.this).inflate(
-                        com.saarang.samples.apps.iosched.R.layout.explore_spinner_item_dropdown, parent, false);
-            }
-            bind(view, position);
-            return view;
-        }
-
-        @Override
-        public View getView(int position, View view, ViewGroup parent) {
-            if (null == view) {
-                view = LayoutInflater.from(ExpertsDirectoryActivity.this).inflate(
-                        com.saarang.samples.apps.iosched.R.layout.explore_spinner_item, parent, false);
-            }
-            bind(view, position);
-            return view;
-        }
-
-        private void bind(View view, int position) {
-            TextView textView = (TextView) view.findViewById(android.R.id.text1);
-            if (0 == position) {
-                textView.setText(getString(com.saarang.samples.apps.iosched.R.string.experts_directory_all_countries));
-            } else {
-                textView.setText(getCountryName(getItem(position)));
-            }
-        }
-
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            mCurrentCountry = getItem(position);
-            if (null == mCurrentCountry) { // All countries
-                mFilterCitiesSpinner.setVisibility(View.INVISIBLE);
-                reloadExpertsList();
-            } else {
-                Bundle args = new Bundle();
-                args.putString(ScheduleContract.Experts.EXPERT_COUNTRY, mCurrentCountry);
-                getLoaderManager().restartLoader(CitiesQuery.TOKEN, args,
-                        ExpertsDirectoryActivity.this);
-            }
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {
-            mCurrentCountry = null;
-            mCurrentCity = null;
-            reloadExpertsList();
-        }
-    }
-
-    /**
-     * An adapter for cities.
-     */
-    private class CitiesAdapter extends BaseAdapter implements AdapterView.OnItemSelectedListener {
-        private final String[] mCities;
-
-        public CitiesAdapter(String[] cities) {
-            mCities = cities;
-        }
-
-        @Override
-        public int getCount() {
-            return mCities.length + 1;
-        }
-
-        @Override
-        public String getItem(int position) {
-            if (0 == position) {
-                return null;
-            }
-            return mCities[position - 1];
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getDropDownView(int position, View view, ViewGroup parent) {
-            if (view == null) {
-                view = LayoutInflater.from(ExpertsDirectoryActivity.this).inflate(
-                        com.saarang.samples.apps.iosched.R.layout.explore_spinner_item_dropdown, parent, false);
-            }
-            bind(view, position);
-            return view;
-        }
-
-        @Override
-        public View getView(int position, View view, ViewGroup parent) {
-            if (null == view) {
-                view = LayoutInflater.from(ExpertsDirectoryActivity.this).inflate(
-                        com.saarang.samples.apps.iosched.R.layout.explore_spinner_item, parent, false);
-            }
-            bind(view, position);
-            return view;
-        }
-
-        private void bind(View view, int position) {
-            TextView textView = (TextView) view.findViewById(android.R.id.text1);
-            if (0 == position) {
-                textView.setText(getString(com.saarang.samples.apps.iosched.R.string.experts_directory_all_cities));
-            } else {
-                textView.setText(getItem(position));
-            }
-        }
-
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            mCurrentCity = getItem(position);
-            reloadExpertsList();
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {
-            mCurrentCity = null;
-            reloadExpertsList();
-        }
-    }
-
-    private void reloadExpertsList() {
-        ExpertsDirectoryFragment fragment = (ExpertsDirectoryFragment)
-                getFragmentManager().findFragmentById(com.saarang.samples.apps.iosched.R.id.experts_fragment);
-        if (fragment == null) {
-            return;
-        }
-
-        fragment.reload(mCurrentCountry, mCurrentCity);
-    }
-
-    private interface CountriesQuery {
-        int TOKEN = 0x1;
-
-        String[] PROJECTION = {
-                ScheduleContract.Experts.EXPERT_COUNTRY,
-        };
-
-        int EXPERT_COUNTRY = 0;
-    }
-
-    private interface CitiesQuery {
-        int TOKEN = 0x2;
-
-        String[] PROJECTION = {
-                ScheduleContract.Experts.EXPERT_CITY,
-        };
-
-        int EXPERT_CITY = 0;
+        SharedPreferences fav= PreferenceManager.getDefaultSharedPreferences(this);
+        Boolean cbvalue=fav.getBoolean(event, false);
+        return cbvalue;
     }
 
 }

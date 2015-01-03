@@ -363,7 +363,7 @@
     <string name="my_schedule_page_desc_a11y">Now showing your schedule for <xliff:g id="day">%1$s</xliff:g></string>
 
     <!-- Menu item to open the Experts screen [CHAR_LIMIT=20] -->
-    <string name="navdrawer_item_experts_directory">Experts</string>
+    <string name="navdrawer_item_experts_directory">Sponsors</string>
 
     <!-- Accessibility description for menu item to open the Experts screen. -->
     <string name="navdrawer_item_experts_directory_a11y">Experts Directory</string>
@@ -765,7 +765,7 @@
     <string name="title_activity_ble" translatable="false">Ble Activity</string>
 
     <!-- Title text for the screen that shows a directory of Saarang Developer Experts, who are independent developers who are experts at Saarang technologies. This should be translated as just 'Experts' because it's smaller. [CHAR_LIMIT=20] -->
-    <string name="title_experts_directory">Experts</string>
+    <string name="title_experts_directory">Sponsors</string>
 
     <string name="title_activity_debug_test_runner" translatable="false">Debug Test Runner</string>
 

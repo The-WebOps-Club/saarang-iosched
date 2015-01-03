@@ -48,26 +48,18 @@
             <include layout="@layout/toolbar_actionbar" /> <!-- placeholder, empty except on L -->
 
             <!-- Spinners for additional filters -->
-            <LinearLayout
-                android:id="@+id/filters_box"
-                android:paddingLeft="?spinnerBarInsetStart"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/filterbar_height"
-                android:orientation="horizontal">
+            <ListView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/listview"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:background="#fff0f0f0"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:paddingTop="7dp">
 
-                <Spinner style="@style/Widget.IOSched.HeaderBar.Spinner"
-                    android:id="@+id/filter_countries"
-                    android:layout_width="@dimen/filter_spinner_width"
-                    android:layout_weight="@integer/filter_spinner_weight"
-                    android:layout_height="match_parent" />
-
-                <Spinner style="@style/Widget.IOSched.HeaderBar.Spinner"
-                    android:id="@+id/filter_cities"
-                    android:layout_width="@dimen/filter_spinner_width"
-                    android:layout_weight="@integer/filter_spinner_weight"
-                    android:layout_height="match_parent" />
-
-            </LinearLayout>
+                </ListView>
         </LinearLayout>
     </com.saarang.samples.apps.iosched.ui.widget.DrawShadowFrameLayout>
 

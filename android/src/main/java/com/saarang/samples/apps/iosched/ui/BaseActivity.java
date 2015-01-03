@@ -467,6 +467,9 @@ public abstract class BaseActivity extends ActionBarActivity implements
         if (attendeeAtVenue) {
             mNavDrawerItems.add(NAVDRAWER_ITEM_MAP);
         }
+        if (attendeeAtVenue) {
+            mNavDrawerItems.add(NAVDRAWER_ITEM_PEOPLE_IVE_MET);
+        }
 
  /*       // If attendee is on-site, show the People I've Met item
         if (attendeeAtVenue) {
@@ -474,16 +477,15 @@ public abstract class BaseActivity extends ActionBarActivity implements
         }
 
         // If the experts directory hasn't expired, show it
-        if (!Config.hasExpertsDirectoryExpired()) {
-            mNavDrawerItems.add(NAVDRAWER_ITEM_EXPERTS_DIRECTORY);
-        }
+
 
         // Other items that are always in the nav drawer irrespective of whether the
         // attendee is on-site or remote:
         mNavDrawerItems.add(NAVDRAWER_ITEM_SOCIAL);
         mNavDrawerItems.add(NAVDRAWER_ITEM_VIDEO_LIBRARY);*/
-        mNavDrawerItems.add(NAVDRAWER_ITEM_SEPARATOR_SPECIAL);
-        mNavDrawerItems.add(NAVDRAWER_ITEM_SETTINGS);
+
+
+        mNavDrawerItems.add(NAVDRAWER_ITEM_EXPERTS_DIRECTORY);
 
         createNavDrawerItems();
     }
@@ -835,19 +837,20 @@ public abstract class BaseActivity extends ActionBarActivity implements
                 startActivity(intent);
                 finish();
                 break;
-            /*
+
             case NAVDRAWER_ITEM_SOCIAL:
                 intent = new Intent(this, SocialActivity.class);
                 startActivity(intent);
                 finish();
                 break;
+
+
+
             case NAVDRAWER_ITEM_EXPERTS_DIRECTORY:
                 intent = new Intent(this, ExpertsDirectoryActivity.class);
                 startActivity(intent);
                 finish();
                 break;
-
-            */
             case NAVDRAWER_ITEM_PEOPLE_IVE_MET:
                 intent = new Intent(this, PeopleIveMetActivity.class);
                 startActivity(intent);
@@ -860,12 +863,12 @@ public abstract class BaseActivity extends ActionBarActivity implements
                 intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 break;
-           /*
+
             case NAVDRAWER_ITEM_VIDEO_LIBRARY:
                 intent = new Intent(this, VideoLibraryActivity.class);
                 startActivity(intent);
                 finish();
-                break;*/
+                break;
         }
     }
 
