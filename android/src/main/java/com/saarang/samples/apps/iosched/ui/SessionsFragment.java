@@ -817,7 +817,7 @@ public class SessionsFragment extends Fragment implements
         if (snippetView != null) {
             if (mIsSearchCursor) {
                 // render the search snippet into the snippet view
-                snippetView.setText(styledSnippet);
+                snippetView.setText(" ");
             } else {
                 // render speaker names and abstracts into the snippet view
                 mBuffer.setLength(0);

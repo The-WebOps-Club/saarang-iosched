@@ -147,10 +147,10 @@ public abstract class BaseActivity extends ActionBarActivity implements
     protected static final int NAVDRAWER_ITEM_SOCIAL = 3;
     protected static final int NAVDRAWER_ITEM_VIDEO_LIBRARY = 4;
     protected static final int NAVDRAWER_ITEM_SIGN_IN = 5;
-    protected static final int NAVDRAWER_ITEM_SETTINGS = 6;
+    protected static final int NAVDRAWER_ITEM_SETTINGS = 8;
 
     protected static final int NAVDRAWER_ITEM_EXPERTS_DIRECTORY = 7;
-    protected static final int NAVDRAWER_ITEM_PEOPLE_IVE_MET = 8;
+    protected static final int NAVDRAWER_ITEM_PEOPLE_IVE_MET = 6;
     protected static final int NAVDRAWER_ITEM_INVALID = -1;
     protected static final int NAVDRAWER_ITEM_SEPARATOR = -2;
     protected static final int NAVDRAWER_ITEM_SEPARATOR_SPECIAL = -3;
@@ -163,9 +163,9 @@ public abstract class BaseActivity extends ActionBarActivity implements
             com.saarang.samples.apps.iosched.R.string.navdrawer_item_social,
             com.saarang.samples.apps.iosched.R.string.navdrawer_item_video_library,
             com.saarang.samples.apps.iosched.R.string.navdrawer_item_sign_in,
-            com.saarang.samples.apps.iosched.R.string.navdrawer_item_settings,
+            com.saarang.samples.apps.iosched.R.string.navdrawer_item_people_ive_met  ,
             com.saarang.samples.apps.iosched.R.string.navdrawer_item_experts_directory,
-            com.saarang.samples.apps.iosched.R.string.navdrawer_item_people_ive_met
+            com.saarang.samples.apps.iosched.R.string.navdrawer_item_settings
     };
 
     // icons for navdrawer items (indices must correspond to above array)
@@ -176,9 +176,11 @@ public abstract class BaseActivity extends ActionBarActivity implements
             com.saarang.samples.apps.iosched.R.drawable.ic_drawer_social, // Social
             com.saarang.samples.apps.iosched.R.drawable.ic_drawer_video_library, // Video Library
             0, // Sign in
-            com.saarang.samples.apps.iosched.R.drawable.ic_drawer_settings,
-            com.saarang.samples.apps.iosched.R.drawable.ic_drawer_experts,
             com.saarang.samples.apps.iosched.R.drawable.ic_drawer_people_met,
+            com.saarang.samples.apps.iosched.R.drawable.ic_drawer_experts,
+            com.saarang.samples.apps.iosched.R.drawable.ic_drawer_settings,
+
+
     };
 
     // delay to launch nav drawer item, to allow close animation to play
@@ -487,6 +489,7 @@ public abstract class BaseActivity extends ActionBarActivity implements
         mNavDrawerItems.add(NAVDRAWER_ITEM_SETTINGS);
 
         mNavDrawerItems.add(NAVDRAWER_ITEM_EXPERTS_DIRECTORY);
+        mNavDrawerItems.add(NAVDRAWER_ITEM_SETTINGS);
 
         createNavDrawerItems();
     }
