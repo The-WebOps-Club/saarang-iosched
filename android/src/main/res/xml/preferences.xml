@@ -16,11 +16,11 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-   <!-- <CheckBoxPreference
+   <CheckBoxPreference
         android:key="pref_local_times"
         android:title="@string/pref_local_times_title"
         android:summary="@string/pref_local_times_description"
-        android:defaultValue="true" /> -->
+        android:defaultValue="true" />
 
     <CheckBoxPreference
         android:key="pref_attendee_at_venue"

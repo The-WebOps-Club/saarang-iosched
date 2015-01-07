@@ -56,23 +56,23 @@ public class Config {
 
     public static final long[][] CONFERENCE_DAYS = new long[][] {
             // start and end of day 1
-            { ParserUtils.parseTime("2015-01-07T16:00:00.000Z"),
-              ParserUtils.parseTime("2015-01-07T23:59:59.999Z") },
+            { ParserUtils.parseTime("2015-01-07T10:30:00.000Z"),
+              ParserUtils.parseTime("2015-01-07T18:29:59.999Z") },
             // start and end of day 2
-            { ParserUtils.parseTime("2015-01-08T07:00:00.000Z"),
-              ParserUtils.parseTime("2015-01-08T23:59:59.999Z") },
+            { ParserUtils.parseTime("2015-01-08T01:30:00.000Z"),
+              ParserUtils.parseTime("2015-01-08T18:29:59.999Z") },
             // start and end of day 3
-            { ParserUtils.parseTime("2015-01-09T07:00:00.000Z"),
-              ParserUtils.parseTime("2015-01-09T23:59:59.999Z") },
+            { ParserUtils.parseTime("2015-01-09T01:30:00.000Z"),
+              ParserUtils.parseTime("2015-01-09T18:29:59.999Z") },
             // start and end of day 4
-            { ParserUtils.parseTime("2015-01-10T07:00:00.000Z"),
-              ParserUtils.parseTime("2015-01-10T23:59:59.999Z") },
+            { ParserUtils.parseTime("2015-01-10T01:30:00.000Z"),
+              ParserUtils.parseTime("2015-01-10T18:29:59.999Z") },
             // start and end of day 5
-            { ParserUtils.parseTime("2015-01-11T07:00:00.000Z"),
-              ParserUtils.parseTime("2015-01-11T23:59:59.999Z") },
+            { ParserUtils.parseTime("2015-01-11T01:30:00.000Z"),
+              ParserUtils.parseTime("2015-01-11T18:29:59.999Z") },
         };
 
-    public static final TimeZone CONFERENCE_TIMEZONE = TimeZone.getTimeZone("GMT");
+    public static final TimeZone CONFERENCE_TIMEZONE = TimeZone.getTimeZone("Asia/Kolkata");
 
     public static final long CONFERENCE_START_MILLIS = CONFERENCE_DAYS[0][0];
     public static final long CONFERENCE_END_MILLIS = CONFERENCE_DAYS[CONFERENCE_DAYS.length-1][1];
@@ -225,11 +225,11 @@ public class Config {
     // Values for the EventPoint feedback API. Sync happens at the same time as schedule sync,
     // and before that values are stored locally in the database.
 
-    public static final String FEEDBACK_API_CODE = "";
-    public static final String FEEDBACK_URL = "";
-    public static final String FEEDBACK_API_KEY = "";
-    public static final String FEEDBACK_DUMMY_REGISTRANT_ID = "";
-    public static final String FEEDBACK_SURVEY_ID = "";
+    public static final String FEEDBACK_API_CODE = "api_code";
+    public static final String FEEDBACK_URL = "http://erp.saarang.org/apitest/";
+    public static final String FEEDBACK_API_KEY = "api_key";
+    public static final String FEEDBACK_DUMMY_REGISTRANT_ID = "registrant_id";
+    public static final String FEEDBACK_SURVEY_ID = "survey_id";
 
     // URL prefix for web links to session pages
     public static final Uri SESSION_DETAIL_WEB_URL_PREFIX

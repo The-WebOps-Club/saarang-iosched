@@ -484,6 +484,7 @@ public abstract class BaseActivity extends ActionBarActivity implements
         mNavDrawerItems.add(NAVDRAWER_ITEM_SOCIAL);
         mNavDrawerItems.add(NAVDRAWER_ITEM_VIDEO_LIBRARY);*/
 
+        mNavDrawerItems.add(NAVDRAWER_ITEM_SETTINGS);
 
         mNavDrawerItems.add(NAVDRAWER_ITEM_EXPERTS_DIRECTORY);
 
