@@ -75,10 +75,10 @@ public class PeopleIveMetActivity extends BaseActivity {
             }
         });
 
-        contacts2(R.id.layout4,R.id.layout_exp_41,R.id.imageView41,R.id.imageView41,"+919677169792","+919444357587");
-        contacts2(R.id.layout5,R.id.layout_exp_51,R.id.imageView51,R.id.imageView51,"+919962301415","+919952993777");
-        contacts2(R.id.layout6,R.id.layout_exp_61,R.id.imageView61,R.id.imageView61,"+918754557441","+919962252801");
-        contacts2(R.id.layout7,R.id.layout_exp_71,R.id.imageView71,R.id.imageView71,"+914422579810","+914422579811");
+        contacts2(R.id.layout4,R.id.layout_exp_41,R.id.imageView41,R.id.imageView42,"+919677169792","+919444357587");
+        contacts2(R.id.layout5,R.id.layout_exp_51,R.id.imageView51,R.id.imageView52,"+919962301415","+919952993777");
+        contacts2(R.id.layout6,R.id.layout_exp_61,R.id.imageView61,R.id.imageView62,"+918754557441","+919962252801");
+        contacts2(R.id.layout7,R.id.layout_exp_71,R.id.imageView71,R.id.imageView72,"+914422579810","+914422579811");
 
 
 
