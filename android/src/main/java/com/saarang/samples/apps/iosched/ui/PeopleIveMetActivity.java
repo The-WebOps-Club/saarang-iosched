@@ -92,7 +92,7 @@ public class PeopleIveMetActivity extends BaseActivity {
                 String[] email = {"webadmin@saarang.org"};
 
 
-                composeEmail(email, "Saarang Android app bug report") ;
+                composeEmail(email, "Saarang android app bug report") ;
 
             }
         });

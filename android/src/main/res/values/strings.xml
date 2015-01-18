@@ -602,13 +602,13 @@
     <string name="session_details_a11y_session_removed">Event removed from your schedule</string>
 
     <!-- A session feedback option indicating the content was too advanced -->
-    <string name="session_feedback_advanced">Too advanced</string>
+    <string name="session_feedback_advanced">Awesome</string>
 
     <!-- A session feedback option indicating the content was too basic -->
-    <string name="session_feedback_basic">Too basic</string>
+    <string name="session_feedback_basic">Not so awesome</string>
 
     <!-- Session feedback section title -->
-    <string name="session_feedback_content">The content was:</string>
+    <string name="session_feedback_content">Rate the conduction of event by coordinators:</string>
 
     <!-- A positive overall session feedback option -->
     <string name="session_feedback_great">Awesome</string>
@@ -623,7 +623,7 @@
     <string name="session_feedback_notification_ticker">Provide event feedback</string>
 
     <!-- A negative relevance session feedback option -->
-    <string name="session_feedback_notrel">Not relevant</string>
+    <string name="session_feedback_notrel">Poor</string>
 
     <!-- A session feedback section label asking for any other feedback. It indicates the user should not add personal information -->
     <string name="session_feedback_other"> Anything else we should know?\n(Please don\'t add any personal information in your comments.) </string>
@@ -635,13 +635,13 @@
     <string name="session_feedback_poor">Poor</string>
 
     <!-- A positive relevance session feedback option -->
-    <string name="session_feedback_rel">Relevant</string>
+    <string name="session_feedback_rel">Good</string>
 
     <!-- A session feedback section label asking for the session's relevance to the user's projects -->
-    <string name="session_feedback_relevance"> How relevant was this event to your projects?  </string>
+    <string name="session_feedback_relevance"> How would you rate the logistics and venue of the event?</string>
 
     <!-- A session feedback section label asking for the speaker's quality -->
-    <string name="session_feedback_speaker_quality">Speaker quality:</string>
+    <string name="session_feedback_speaker_quality">How was the communication of event format and rules?</string>
 
     <!-- Button text for submitting session feedback -->
     <string name="session_feedback_submitlink">Submit Feedback</string>
