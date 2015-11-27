@@ -84,7 +84,9 @@
         android:theme="@style/Theme.IOSched"
         android:hardwareAccelerated="true"
         android:allowBackup="true"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
+        android:name="android.support.multidex.MultiDexApplication"
+        >
 
         <!-- Google Play Services -->
         <meta-data
