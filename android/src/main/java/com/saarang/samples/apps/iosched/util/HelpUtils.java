@@ -94,7 +94,7 @@ public class HelpUtils {
                     HelpUtils.showEula(getActivity());
                 }
             }, 0, eulaLink.length(), 0);*/
-            aboutBody.append("Official Android Application for Saarang 2015. \nVersion : "+versionName+"\n\n"+"Developed by \nMobOps Team \nSaarang 2015");
+            aboutBody.append("Official Android Application for Saarang 2016. \nVersion : "+versionName+"\n\n"+"Developed by \nMobOps Team \nSaarang 2016");
             //aboutBody.append(eulaLink);
 
             LayoutInflater layoutInflater = (LayoutInflater) getActivity().getSystemService(

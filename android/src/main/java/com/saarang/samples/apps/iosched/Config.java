@@ -43,7 +43,7 @@ public class Config {
     public static final String BOOTSTRAP_DATA_TIMESTAMP = "Sun, 14 Dec 2014 00:05:03 GMT";
 
     // Conference hashtag
-    public static final String CONFERENCE_HASHTAG = "#saarang15";
+    public static final String CONFERENCE_HASHTAG = "#saarang16";
 
     // Patterns that, when absent from a hashtag, will trigger the addition of the
     // CONFERENCE_HASHTAG on sharing snippets. Ex: "#Android" will be shared as "#io14 #Android",
@@ -52,24 +52,25 @@ public class Config {
 
     // Hard-coded conference dates. This is hardcoded here instead of extracted from the conference
     // data to avoid the Schedule UI breaking if some session is incorrectly set to a wrong date.
-    public static final int CONFERENCE_YEAR = 2015;
+    public static final int CONFERENCE_YEAR = 2016;
 
     public static final long[][] CONFERENCE_DAYS = new long[][] {
-            // start and end of day 1
-            { ParserUtils.parseTime("2015-01-07T10:30:00.000Z"),
-              ParserUtils.parseTime("2015-01-07T18:29:59.999Z") },
-            // start and end of day 2
-            { ParserUtils.parseTime("2015-01-08T01:30:00.000Z"),
-              ParserUtils.parseTime("2015-01-08T18:29:59.999Z") },
-            // start and end of day 3
-            { ParserUtils.parseTime("2015-01-09T01:30:00.000Z"),
-              ParserUtils.parseTime("2015-01-09T18:29:59.999Z") },
-            // start and end of day 4
-            { ParserUtils.parseTime("2015-01-10T01:30:00.000Z"),
-              ParserUtils.parseTime("2015-01-10T18:29:59.999Z") },
             // start and end of day 5
-            { ParserUtils.parseTime("2015-01-11T01:30:00.000Z"),
-              ParserUtils.parseTime("2015-01-11T18:29:59.999Z") },
+            { ParserUtils.parseTime("2016-01-06T01:30:00.000Z"),
+                    ParserUtils.parseTime("2016-01-06T18:29:59.999Z") },
+            // start and end of day 1
+            { ParserUtils.parseTime("2016-01-07T10:30:00.000Z"),
+              ParserUtils.parseTime("2016-01-07T18:29:59.999Z") },
+            // start and end of day 2
+            { ParserUtils.parseTime("2016-01-08T01:30:00.000Z"),
+              ParserUtils.parseTime("2016-01-08T18:29:59.999Z") },
+            // start and end of day 3
+            { ParserUtils.parseTime("2016-01-09T01:30:00.000Z"),
+              ParserUtils.parseTime("2016-01-09T18:29:59.999Z") },
+            // start and end of day 4
+            { ParserUtils.parseTime("2016-01-10T01:30:00.000Z"),
+              ParserUtils.parseTime("2016-01-10T18:29:59.999Z") },
+
         };
 
     public static final TimeZone CONFERENCE_TIMEZONE = TimeZone.getTimeZone("Asia/Kolkata");
@@ -100,7 +101,7 @@ public class Config {
     public static final String LIVESTREAM_CAPTIONS_DARK_THEME_URL_PARAM = "&theme=dark";
 
     // Conference public WiFi AP parameters
-    public static final String WIFI_SSID = "SAARANG2015";
+    public static final String WIFI_SSID = "SAARANG2016";
     public static final String WIFI_PASSPHRASE = "letsdothis";
 
     // GCM config
