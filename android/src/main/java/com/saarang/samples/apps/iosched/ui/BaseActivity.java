@@ -68,7 +68,6 @@ import com.google.android.gcm.GCMRegistrar;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.saarang.samples.apps.iosched.BuildConfig;
 import com.saarang.samples.apps.iosched.Config;
-import com.saarang.samples.apps.iosched.R;
 import com.saarang.samples.apps.iosched.gcm.ServerUtilities;
 import com.saarang.samples.apps.iosched.io.JSONHandler;
 import com.saarang.samples.apps.iosched.provider.ScheduleContract;
@@ -82,24 +81,18 @@ import com.saarang.samples.apps.iosched.util.AnalyticsManager;
 import com.saarang.samples.apps.iosched.util.HelpUtils;
 import com.saarang.samples.apps.iosched.util.ImageLoader;
 import com.saarang.samples.apps.iosched.util.LUtils;
+import com.saarang.samples.apps.iosched.util.LogUtils;
 import com.saarang.samples.apps.iosched.util.LoginAndAuthHelper;
 import com.saarang.samples.apps.iosched.util.PlayServicesUtils;
 import com.saarang.samples.apps.iosched.util.PrefUtils;
 import com.saarang.samples.apps.iosched.util.RecentTasksStyler;
 import com.saarang.samples.apps.iosched.util.UIUtils;
 import com.saarang.samples.apps.iosched.util.WiFiUtils;
-import com.saarang.samples.apps.iosched.util.LogUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static com.saarang.samples.apps.iosched.util.LogUtils.LOGD;
-import static com.saarang.samples.apps.iosched.util.LogUtils.LOGE;
-import static com.saarang.samples.apps.iosched.util.LogUtils.LOGI;
-import static com.saarang.samples.apps.iosched.util.LogUtils.LOGW;
-import static com.saarang.samples.apps.iosched.util.LogUtils.makeLogTag;
 
 /**
  * A base activity that handles common functionality in the app. This includes the
@@ -470,7 +463,8 @@ public abstract class BaseActivity extends ActionBarActivity implements
             mNavDrawerItems.add(NAVDRAWER_ITEM_MAP);
         }
         if (attendeeAtVenue) {
-            mNavDrawerItems.add(NAVDRAWER_ITEM_PEOPLE_IVE_MET);
+            // TODO uncomment this for Help
+//            mNavDrawerItems.add(NAVDRAWER_ITEM_PEOPLE_IVE_MET);
         }
 
  /*       // If attendee is on-site, show the People I've Met item
