@@ -463,8 +463,7 @@ public abstract class BaseActivity extends ActionBarActivity implements
             mNavDrawerItems.add(NAVDRAWER_ITEM_MAP);
         }
         if (attendeeAtVenue) {
-            // TODO uncomment this for Help
-//            mNavDrawerItems.add(NAVDRAWER_ITEM_PEOPLE_IVE_MET);
+            mNavDrawerItems.add(NAVDRAWER_ITEM_PEOPLE_IVE_MET);
         }
 
  /*       // If attendee is on-site, show the People I've Met item
