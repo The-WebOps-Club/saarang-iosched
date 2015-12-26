@@ -16,882 +16,1674 @@
   limitations under the License.
   -->
 
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    tools:context=".ui.PeopleIveMetActivity"
+    android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:layout_height="match_parent">
+    tools:context=".ui.PeopleIveMetActivity">
 
     <!-- Main layout -->
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp">
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-        <include layout="@layout/toolbar_actionbar_with_headerbar" />
-
-        <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view"
-            android:layout_gravity="center"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            card_view:cardCornerRadius="1dp"
-            card_view:contentPaddingLeft="20dp"
-            >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Report Bug"
-                android:id="@+id/textView"
-                android:layout_gravity="left|center_vertical"
-                android:textSize="19dp"
-                android:textIsSelectable="false" />
-        </android.support.v7.widget.CardView>
+            <include layout="@layout/toolbar_actionbar_with_headerbar" />
 
-        <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view1"
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            card_view:cardCornerRadius="1dp"
-            card_view:contentPaddingLeft="20dp"
-
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Rate the app"
-                android:id="@+id/textView2"
-                android:layout_gravity="left|center_vertical"
-                android:textSize="19dp"
-                android:textIsSelectable="false" />
-
-        </android.support.v7.widget.CardView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Contacts"
-            android:id="@+id/textView3"
-            android:layout_margin="10dp" />
-        <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/layout1"
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            card_view:cardCornerRadius="1dp"
-            card_view:contentPaddingLeft="20dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Secretary, Cultural Affairs (Arts)"
-                android:layout_gravity="left|center_vertical"
-                android:textIsSelectable="false"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textSize="19dp" />
-        </android.support.v7.widget.CardView>
-
-        <RelativeLayout
-            android:id="@+id/layout_exp_1"
-
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:background="#ffdfd7cc"
-            android:paddingBottom="5dp"
-            android:paddingTop="7dp"
-            android:paddingLeft="15dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Salady Varun Teja "
-                android:id="@+id/textView5"
-                android:textSize="18dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="+919444005768 "
-                android:id="@+id/textView4"
-                android:textIsSelectable="true" />
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:id="@+id/imageView1"
-                android:src="@drawable/ic_action_call"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                />
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:text="Report Bug"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
 
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp"
 
-        <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/layout2"
-            android:layout_gravity="center|bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            card_view:cardCornerRadius="1dp"
-            card_view:contentPaddingLeft="20dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Secretary, Cultural Affairs (Lit)"
-                android:layout_gravity="left|center_vertical"
-                android:textIsSelectable="false"
-                android:id="@+id/sasd"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textSize="19dp" />
-        </android.support.v7.widget.CardView>
-
-        <RelativeLayout
-            android:id="@+id/layout_exp_2"
-
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:background="#ffdfd7cc"
-            android:paddingBottom="5dp"
-            android:paddingTop="7dp"
-            android:paddingLeft="15dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 >
 
                 <TextView
+                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:text="Rate the app"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Supreet Hegde "
-                    android:id="@+id/sada"
-                    android:textSize="18dp" />
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Contacts"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="+919444005769"
-                    android:id="@+id/adsa"
-                    android:textIsSelectable="true" />
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Secretary, Cultural Affairs (Arts)"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/layout_exp_1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="7dp">
+
+                <LinearLayout
+                    android:id="@+id/llCulsec1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aditya U"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/p_adi" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:id="@+id/sasd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Secretary, Cultural Affairs (Lit)"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/layout_exp_2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="7dp">
+
+                <LinearLayout
+                    android:id="@+id/llCulsec2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/sada"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Krishna Koushik"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/p_krishnakoushik" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Hospitality Control Room"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/layout_exp_31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutGod"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Godavari"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_action_call2" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_exp_32"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutSha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sharavati"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_action_call2" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:id="@+id/imageView2"
-                android:src="@drawable/ic_action_call"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/layout7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                />
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Hospitality Desk"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/layout_exp_71"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
 
 
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
 
-        <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/layout3"
-            android:layout_gravity="center|bottom"
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHelp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Help Desk 1"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textIsSelectable="true"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_action_call2" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_exp_72"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHelp2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Help Desk 2"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textIsSelectable="true"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_action_call2" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/layout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Events"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/layout_exp_41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/llEvents1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rushabh Menon"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textIsSelectable="false"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_rushabh" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/llEvents2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Srijith R"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textIsSelectable="false"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_srijith" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/layout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Professional Shows"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp"
+                     />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/layout_exp_51"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/llPro1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ashwin S Pothen"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_pothen" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/llPro2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Harshith Guntha"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_harshith" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/layout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Marketing And Sales"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/layout_exp_61"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/llMarketing1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sai Krishna Koushik"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textIsSelectable="false"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_saikrishnakoushik" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/llMarketing2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sai Akhil Matha"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_akhil" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardLayoutSpons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Sponsorship &amp; PR"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/llSpons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#ffdfd7cc"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="7dp">
+
+                        <LinearLayout
+                            android:id="@+id/llSponsPerson1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Anish Rathi"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textIsSelectable="false"
+                                android:textSize="18dp" />
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/p_anish" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#ffdfd7cc"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="7dp">
+
+                        <LinearLayout
+                            android:id="@+id/llSponsPerson2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Anirvan Bordoloi"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textIsSelectable="false"
+                                android:textSize="18dp" />
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/p_anirvan" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#ffdfd7cc"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="7dp">
+
+                        <LinearLayout
+                            android:id="@+id/llSponsPerson3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ashish Jha"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textIsSelectable="false"
+                                android:textSize="18dp" />
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/p_aashish" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardLayoutPublicity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Publicity"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/rlPublicity"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="7dp">
+
+                <LinearLayout
+                    android:id="@+id/llPublicity1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rinkesh Virani"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/p_rinkesh" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardLayoutHospitality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Hospitality"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/rlHospitality"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="7dp">
+
+                <LinearLayout
+                    android:id="@+id/llHospitality1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sreeharsha Gunda"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/p_sreeharsha" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardLayoutMobops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Web &amp; Mobile Operations"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp"
+                     />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/llMobops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/llMobops1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Deepak Padamata"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_deepak" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/llMobops2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Aqel Ahammed"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_aqel" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardLayoutDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Design"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/llDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#ffdfd7cc"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="7dp">
+
+                        <LinearLayout
+                            android:id="@+id/llDesign1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Manavala Thambi"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textIsSelectable="false"
+                                android:textSize="18dp" />
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/p_thambi" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#ffdfd7cc"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="7dp">
+
+                        <LinearLayout
+                            android:id="@+id/llDesign2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rathees P"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textIsSelectable="false"
+                                android:textSize="18dp" />
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/p_rathees" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#ffdfd7cc"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="7dp">
+
+                        <LinearLayout
+                            android:id="@+id/llDesign3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rahul K"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textIsSelectable="false"
+                                android:textSize="18dp" />
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/p_rahul" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardLayoutFinance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Finance"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp"
+                     />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/llFinance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/llFinance1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Favas M P"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_favas" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/llFinance2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Srinivas Ramanand"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_ramanand" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardLayoutFacilities"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_gravity="center|bottom"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
             card_view:cardCornerRadius="1dp"
-            card_view:contentPaddingLeft="20dp"
-            >
+            card_view:contentPaddingLeft="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Hospitality Control Room"
                 android:layout_gravity="left|center_vertical"
-                android:textIsSelectable="false"
-                android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:textSize="19dp" />
+                android:paddingTop="10dp"
+                android:text="Facilities"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textIsSelectable="false"
+                android:textSize="19dp"
+                 />
         </android.support.v7.widget.CardView>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/layout_exp_31"
-            >
-            <RelativeLayout
-
-
-                android:orientation="horizontal"
+            <LinearLayout
+                android:id="@+id/llFacilities"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:background="#ffdfd7cc"
-                android:paddingBottom="5dp"
-                android:paddingTop="7dp"
-                android:paddingLeft="15dp">
-
-                <LinearLayout
-                    android:orientation="vertical"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Godavari"
-                        android:textSize="18dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="+914422579815"
-                        android:textIsSelectable="true" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/imageView31"
-                    android:src="@drawable/ic_action_call"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/layout_exp_32"
-
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:background="#ffdfd7cc"
-                android:paddingBottom="5dp"
-                android:paddingTop="7dp"
-                android:paddingLeft="15dp">
-
-                <LinearLayout
-                    android:orientation="vertical"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Sharavati"
-                        android:textSize="18dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="+914422579816"
-                        android:textIsSelectable="true" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/imageView32"
-                    android:src="@drawable/ic_action_call"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                        />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-
-        <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/layout7"
-            android:layout_gravity="center|bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            card_view:cardCornerRadius="1dp"
-            card_view:contentPaddingLeft="20dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Hospitality Desk"
-                android:layout_gravity="left|center_vertical"
-                android:textIsSelectable="false"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textSize="19dp" />
-        </android.support.v7.widget.CardView>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/layout_exp_71"
-            >
-            <RelativeLayout
-
-
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:background="#ffdfd7cc"
-                android:paddingBottom="5dp"
-                android:paddingTop="7dp"
-                android:paddingLeft="15dp">
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:orientation="vertical"
+                <RelativeLayout
 
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
 
-
-
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/llFacilities1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="+914422579810"
-                        android:textSize="18dp"
-                        android:textIsSelectable="true" />
-                </LinearLayout>
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <ImageView
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hari M"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_hari" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
                     android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/imageView71"
-                    android:src="@drawable/ic_action_call"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                    />
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/layout_exp_72"
+                    <LinearLayout
+                        android:id="@+id/llFacilities2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                android:orientation="horizontal"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Amar"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_amar" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardLayoutSecurity"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:background="#ffdfd7cc"
-                android:paddingBottom="5dp"
-                android:paddingTop="7dp"
-                android:paddingLeft="15dp">
-
-                <LinearLayout
-                    android:orientation="vertical"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
-
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="+914422579811"
-                        android:textSize="18dp"
-                        android:textIsSelectable="true" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/imageView72"
-                    android:src="@drawable/ic_action_call"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                    />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-
-
-
-        <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/layout4"
-            android:layout_gravity="center|bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            card_view:cardCornerRadius="1dp"
-            card_view:contentPaddingLeft="20dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Events"
-                android:layout_gravity="left|center_vertical"
-                android:textIsSelectable="false"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textSize="19dp" />
-        </android.support.v7.widget.CardView>
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/layout_exp_41"
-            >
-            <RelativeLayout
-
-
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:background="#ffdfd7cc"
-                android:paddingBottom="5dp"
-                android:paddingTop="7dp"
-                android:paddingLeft="15dp">
-
-                <LinearLayout
-                    android:orientation="vertical"
-
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    >
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Security"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp"
+                     />
+            </android.support.v7.widget.CardView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Digvijay Mahra"
-                        android:textSize="18dp"
-                        android:textIsSelectable="false" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="+919677169792"
-                        android:textIsSelectable="true" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/imageView41"
-                    android:src="@drawable/ic_action_call"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/layout_exp_42"
-
-                android:orientation="horizontal"
+            <LinearLayout
+                android:id="@+id/llSecurity"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:background="#ffdfd7cc"
-                android:paddingBottom="5dp"
-                android:paddingTop="7dp"
-                android:paddingLeft="15dp">
-
-                <LinearLayout
-                    android:orientation="vertical"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Noel Jose"
-                        android:textSize="18dp"
-                        android:textIsSelectable="false" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="+919444357587"
-                        android:textIsSelectable="true" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/imageView42"
-                    android:src="@drawable/ic_action_call"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                    />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-
-        <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/layout5"
-            android:layout_gravity="center|bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            card_view:cardCornerRadius="1dp"
-            card_view:contentPaddingLeft="20dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Professional Shows"
-                android:layout_gravity="left|center_vertical"
-                android:textIsSelectable="false"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textSize="19dp" />
-        </android.support.v7.widget.CardView>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/layout_exp_51"
-            >
-            <RelativeLayout
-
-
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:background="#ffdfd7cc"
-                android:paddingBottom="5dp"
-                android:paddingTop="7dp"
-                android:paddingLeft="15dp">
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:orientation="vertical"
+                <RelativeLayout
 
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/llSecurity1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bharadwaj M"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_bharadwaj" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#ffdfd7cc"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="7dp">
+
+                    <LinearLayout
+                        android:id="@+id/llSecurity2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ruth Babu Marpu"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/p_ruthbabu" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardLayoutQMS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                card_view:cardCornerRadius="1dp"
+                card_view:contentPaddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="QMS"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
+                    android:textSize="19dp" />
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/rlQMS"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#ffdfd7cc"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="7dp">
+
+                <LinearLayout
+                    android:id="@+id/llQMS1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vidyadhar Mudium"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Nishad Acharya"
                         android:textSize="18dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="+919962301415"
-                        android:textIsSelectable="true" />
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/p_vidyadhar" />
                 </LinearLayout>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/imageView51"
-                    android:src="@drawable/ic_action_call"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/layout_exp_52"
-
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:background="#ffdfd7cc"
-                android:paddingBottom="5dp"
-                android:paddingTop="7dp"
-                android:paddingLeft="15dp">
-
-                <LinearLayout
-                    android:orientation="vertical"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Rajaram Suresh"
-                        android:textSize="18dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="+919952993777"
-                        android:textIsSelectable="true" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/imageView52"
-                    android:src="@drawable/ic_action_call"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                    />
 
             </RelativeLayout>
 
         </LinearLayout>
-
-
-        <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/layout6"
-            android:layout_gravity="center|bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            card_view:cardCornerRadius="1dp"
-            card_view:contentPaddingLeft="20dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Ticket Sales"
-                android:layout_gravity="left|center_vertical"
-                android:textIsSelectable="false"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textSize="19dp" />
-        </android.support.v7.widget.CardView>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/layout_exp_61"
-            >
-            <RelativeLayout
-
-
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:background="#ffdfd7cc"
-                android:paddingBottom="5dp"
-                android:paddingTop="7dp"
-                android:paddingLeft="15dp">
-
-                <LinearLayout
-                    android:orientation="vertical"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Rithesh SB"
-                        android:textSize="18dp"
-                        android:textIsSelectable="false" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="+918754557441"
-                        android:textIsSelectable="true" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/imageView61"
-                    android:src="@drawable/ic_action_call"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/layout_exp_62"
-
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:background="#ffdfd7cc"
-                android:paddingBottom="5dp"
-                android:paddingTop="7dp"
-                android:paddingLeft="15dp">
-
-                <LinearLayout
-                    android:orientation="vertical"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="John Abraham S"
-                        android:textSize="18dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="+919962252801"
-                        android:textIsSelectable="true" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/imageView62"
-                    android:src="@drawable/ic_action_call"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="10dp"
-                    />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-
-
-
-    </LinearLayout>
     </ScrollView>
     <!-- Nav drawer -->
     <include layout="@layout/navdrawer" />

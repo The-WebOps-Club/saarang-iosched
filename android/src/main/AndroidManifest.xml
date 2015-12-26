@@ -264,6 +264,10 @@
             android:label="@string/title_people_ive_met"
             android:theme="@style/Theme.IOSched.PeopleIveMet"/>
 
+        <activity
+            android:name=".ui.ContactDialogActivity"
+            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
+            />
 	    <!-- Session alarm/calendar integrating components. -->
         <receiver android:name="com.saarang.samples.apps.iosched.receiver.SessionAlarmReceiver" >
             <intent-filter>
