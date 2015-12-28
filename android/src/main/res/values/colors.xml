@@ -83,4 +83,5 @@
     <color name="tab_selected_strip">@color/theme_accent_1</color>
 
     <color name="my_schedule_conflict">#db4437</color>
+    <color name="sponsors_background">#FFA31A</color>
 </resources>
