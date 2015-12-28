@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+    android:minWidth="180dp"
+    android:minHeight="220dp"
+    >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:id="@+id/ivProfilePic"
+            android:scaleType="centerCrop"
+            android:background="#363636"
+            android:adjustViewBounds="false"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="6dp"
+            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2"
+            android:padding="4dp"
+            android:gravity="center_vertical"
+            >
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:id="@+id/ibCall"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_call"
+                android:layout_weight="33"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:id="@+id/ibMail"
+                android:src="@drawable/ic_email"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_weight="33"
+                android:scaleType="fitCenter" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="name"
+        android:id="@+id/tvName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffff"
+        android:background="#5e363636"
+        android:gravity="bottom"
+        android:padding="8dp"
+        android:layout_alignRight="@+id/linearLayout3"
+        android:layout_alignEnd="@+id/linearLayout3" />
+
+</RelativeLayout>
