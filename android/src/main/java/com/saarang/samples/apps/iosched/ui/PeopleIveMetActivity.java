@@ -19,6 +19,7 @@ package com.saarang.samples.apps.iosched.ui;
 import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -26,6 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.saarang.samples.apps.iosched.R;
 import com.saarang.samples.apps.iosched.util.ContactObject;
@@ -276,6 +278,94 @@ public class PeopleIveMetActivity extends BaseActivity {
 
             }
         });
+
+        Typeface tf = Typeface.createFromAsset(getAssets(), "steelfish.ttf");
+        TextView text = (TextView) findViewById(R.id.sada);
+        text.setTypeface(tf);
+
+        TextView text1 = (TextView) findViewById(R.id.tv1);
+        text1.setTypeface(tf);
+
+        TextView text2 = (TextView) findViewById(R.id.tv2);
+        text2.setTypeface(tf);
+
+        TextView text3 = (TextView) findViewById(R.id.tv3);
+        text3.setTypeface(tf);
+
+        TextView text4 = (TextView) findViewById(R.id.tv4);
+        text4.setTypeface(tf);
+
+        TextView text5 = (TextView) findViewById(R.id.tv5);
+        text5.setTypeface(tf);
+
+        TextView text6 = (TextView) findViewById(R.id.tv6);
+        text6.setTypeface(tf);
+
+        TextView text7 = (TextView) findViewById(R.id.tv7);
+        text7.setTypeface(tf);
+
+        TextView text8 = (TextView) findViewById(R.id.tv8);
+        text8.setTypeface(tf);
+
+        TextView text9 = (TextView) findViewById(R.id.tv9);
+        text9.setTypeface(tf);
+
+        TextView text10 = (TextView) findViewById(R.id.tv10);
+        text10.setTypeface(tf);
+
+        TextView text11 = (TextView) findViewById(R.id.tv11);
+        text11.setTypeface(tf);
+
+        TextView text12 = (TextView) findViewById(R.id.tv12);
+        text12.setTypeface(tf);
+
+        TextView text13 = (TextView) findViewById(R.id.tv13);
+        text13.setTypeface(tf);
+
+        TextView text14 = (TextView) findViewById(R.id.tv14);
+        text14.setTypeface(tf);
+
+        TextView text15 = (TextView) findViewById(R.id.tv15);
+        text15.setTypeface(tf);
+
+        TextView text16 = (TextView) findViewById(R.id.tv16);
+        text16.setTypeface(tf);
+
+        TextView text17 = (TextView) findViewById(R.id.tv17);
+        text17.setTypeface(tf);
+
+        TextView text18 = (TextView) findViewById(R.id.tv18);
+        text18.setTypeface(tf);
+
+        TextView text19 = (TextView) findViewById(R.id.tv19);
+        text19.setTypeface(tf);
+
+        TextView text20 = (TextView) findViewById(R.id.tv20);
+        text20.setTypeface(tf);
+
+        TextView text21 = (TextView) findViewById(R.id.tv21);
+        text21.setTypeface(tf);
+
+        TextView text22= (TextView) findViewById(R.id.tv22);
+        text22.setTypeface(tf);
+
+        TextView text23 = (TextView) findViewById(R.id.tv23);
+        text23.setTypeface(tf);
+
+        TextView text24 = (TextView) findViewById(R.id.tv24);
+        text24.setTypeface(tf);
+
+        TextView text25 = (TextView) findViewById(R.id.tv25);
+        text25.setTypeface(tf);
+
+        TextView text26 = (TextView) findViewById(R.id.tv26);
+        text26.setTypeface(tf);
+
+        TextView text27 = (TextView) findViewById(R.id.tv27);
+        text27.setTypeface(tf);
+
+        TextView text28 = (TextView) findViewById(R.id.tv28);
+        text28.setTypeface(tf);
 
         if (null == savedInstanceState) {
 

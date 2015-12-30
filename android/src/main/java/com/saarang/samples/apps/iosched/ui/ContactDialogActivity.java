@@ -2,6 +2,7 @@ package com.saarang.samples.apps.iosched.ui;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,7 @@ public class ContactDialogActivity extends Activity  {
         ImageView profilePic=(ImageView) findViewById(R.id.ivProfilePic);
         TextView name=(TextView) findViewById(R.id.tvName);
         ImageButton phone, email, publicProfile;
+        Typeface tf = Typeface.createFromAsset(getAssets(), "steelfish.ttf");
 
         phone=(ImageButton) findViewById(R.id.ibCall);
         email=(ImageButton) findViewById(R.id.ibMail);
@@ -39,6 +41,7 @@ public class ContactDialogActivity extends Activity  {
 
         profilePic.setImageResource(contact.getProfilePic());
         name.setText(contact.getName());
+        name.setTypeface(tf);
         phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
