@@ -233,6 +233,10 @@ public class SessionsFragment extends Fragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Marking as attendee to avoid wifi setup
+        PrefUtils.setAttendeeAtVenue(getActivity().getApplicationContext(), true);
+        PrefUtils.markAnsweredLocalOrRemote(getActivity().getApplicationContext());
+
         if (mImageLoader == null) {
             mImageLoader = new ImageLoader(this.getActivity());
         }
@@ -969,7 +973,7 @@ public class SessionsFragment extends Fragment implements
                 }, CARD_DISMISS_ACTION_DELAY);
             }
         });
-        card.show();
+//        card.show();
     }
 
     private void setupIOExtendedCard(final MessageCardView card) {
