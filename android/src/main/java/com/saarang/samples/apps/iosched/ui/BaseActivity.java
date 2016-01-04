@@ -50,6 +50,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -849,6 +850,7 @@ public abstract class BaseActivity extends ActionBarActivity implements
                 finish();
                 break;
             case NAVDRAWER_ITEM_PEOPLE_IVE_MET:
+                Log.d(TAG, "Clicked People I've met");
                 intent = new Intent(this, PeopleIveMetActivity.class);
                 startActivity(intent);
                 finish();

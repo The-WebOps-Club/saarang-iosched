@@ -75,9 +75,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
-
-import static com.saarang.samples.apps.iosched.util.LogUtils.LOGD;
 
 /**
  * An activity that shows detail information for a session, including session title, abstract,
@@ -1116,39 +1113,41 @@ public class SessionDetailActivity extends BaseActivity implements
         SessionsHelper helper = new SessionsHelper(this);
         switch (item.getItemId()) {
             case com.saarang.samples.apps.iosched.R.id.menu_map_room:
-                /* [ANALYTICS:EVENT]
-                 * TRIGGER:   Click on the Map action on the Session Details page.
-                 * CATEGORY:  'Session'
-                 * ACTION:    'Map'
-                 * LABEL:     session title/subtitle
-                 * [/ANALYTICS]
-                 */
-                AnalyticsManager.sendEvent("Session", "Map", mTitleString, 0L);
-                //helper.startMapActivity(mRoomId);
-                if(!mCaption.trim().equals("")){
-                    double latitude, longitude;
-                String coordinates[] = mCaption.split(",");
-                latitude = Double.parseDouble(coordinates[0]);
-                longitude = Double.parseDouble(coordinates[1]);
-
-                final Uri uri = Uri.parse("market://details?id=com.hm.raft");
-                final Intent rateAppIntent = new Intent(Intent.ACTION_VIEW, uri);
-                Log.d("raft", "3");
-
-                boolean installed = appInstalledOrNot("com.hm.raft");
-
-                if (installed) {
-                    Log.d("raft", "1");
-
-                    String geoUri = String.format(Locale.ENGLISH, "raftgeotagg:%f,%f", latitude, longitude);
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(geoUri));
-                    startActivity(intent);
-                } else {
-                    startActivity(rateAppIntent);
-                }}
-                else{
-                    Toast.makeText(SessionDetailActivity.this,"No location added for this event",Toast.LENGTH_SHORT).show();
-                }
+//                /* [ANALYTICS:EVENT]
+//                 * TRIGGER:   Click on the Map action on the Session Details page.
+//                 * CATEGORY:  'Session'
+//                 * ACTION:    'Map'
+//                 * LABEL:     session title/subtitle
+//                 * [/ANALYTICS]
+//                 */
+//                AnalyticsManager.sendEvent("Session", "Map", mTitleString, 0L);
+//                //helper.startMapActivity(mRoomId);
+//                if(!mCaption.trim().equals("")){
+//                    double latitude, longitude;
+//                String coordinates[] = mCaption.split(",");
+//                latitude = Double.parseDouble(coordinates[0]);
+//                longitude = Double.parseDouble(coordinates[1]);
+//
+//                final Uri uri = Uri.parse("market://details?id=com.hm.raft");
+//                final Intent rateAppIntent = new Intent(Intent.ACTION_VIEW, uri);
+//                Log.d("raft", "3");
+//
+//                boolean installed = appInstalledOrNot("com.hm.raft");
+//
+//                if (installed) {
+//                    Log.d("raft", "1");
+//
+//                    String geoUri = String.format(Locale.ENGLISH, "raftgeotagg:%f,%f", latitude, longitude);
+//                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(geoUri));
+//                    startActivity(intent);
+//                } else {
+//                    startActivity(rateAppIntent);
+//                }}
+//                else{
+//                    Toast.makeText(SessionDetailActivity.this,"No location added for this event",Toast.LENGTH_SHORT).show();
+//                }
+            AnalyticsManager.sendEvent("Session", "Map", mTitleString, 0L);
+            helper.startMapActivity(mRoomId);
                 return true;
 
             case com.saarang.samples.apps.iosched.R.id.menu_share:

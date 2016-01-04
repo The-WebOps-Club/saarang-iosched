@@ -997,7 +997,7 @@ public class SessionsFragment extends Fragment implements
                 }, CARD_DISMISS_ACTION_DELAY);
             }
         });
-        card.show();
+//        card.show();
     }
 
     private void animateSessionAppear(final View view) {

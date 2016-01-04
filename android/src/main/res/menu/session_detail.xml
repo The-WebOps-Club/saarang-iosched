@@ -16,7 +16,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:iosched="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/menu_map_room"
-        android:icon="@drawable/raft"
+        android:icon="@drawable/ic_action_map"
         android:title="@string/description_map"
         android:orderInCategory="1"
         iosched:showAsAction="ifRoom" />
