@@ -69,6 +69,7 @@ import com.google.android.gcm.GCMRegistrar;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.saarang.samples.apps.iosched.BuildConfig;
 import com.saarang.samples.apps.iosched.Config;
+import com.saarang.samples.apps.iosched.R;
 import com.saarang.samples.apps.iosched.gcm.ServerUtilities;
 import com.saarang.samples.apps.iosched.io.JSONHandler;
 import com.saarang.samples.apps.iosched.provider.ScheduleContract;
@@ -608,7 +609,7 @@ public abstract class BaseActivity extends ActionBarActivity implements
         if (coverImageUrl != null) {
             mImageLoader.loadImage(coverImageUrl, coverImageView);
         } else {
-            coverImageView.setImageResource(com.saarang.samples.apps.iosched.R.drawable.default_cover);
+            coverImageView.setImageResource(R.drawable.bg_cover_2016);
         }
 
         email.setText(chosenAccount.name);
