@@ -18,11 +18,8 @@ package com.saarang.samples.apps.iosched.ui;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -33,28 +30,28 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.saarang.samples.apps.iosched.R;
 
 import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import com.saarang.samples.apps.iosched.R;
-import com.saarang.samples.apps.iosched.util.PrefUtils;
 
 public class ExpertsDirectoryActivity extends BaseActivity {
     private static final String NAVDRAWER_ITEM_EXPERTS_DIRECTORY = "Sponsors";
 
-    private static final String SCREEN_LABEL = "ExpertsDirectory";
+    private static final String SCREEN_LABEL = "Sponsors";
+    private static final String LOG_TAG = "SponsorsScreen";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(LOG_TAG, "Loading");
 
         if (isFinishing()) {
             return;
@@ -63,7 +60,38 @@ public class ExpertsDirectoryActivity extends BaseActivity {
         setContentView(com.saarang.samples.apps.iosched.R.layout.activity_experts_directory);
         Log.d("hai dude", "hai");
         new getSponsors().execute();
+        if (!loadpref("firstjsonloadsucces")) processJSON(loadJSONFromAsset());
 
+
+    }
+
+    private void readFromJSONFirstTime() {
+        Log.d(LOG_TAG, loadJSONFromAsset());
+
+    }
+
+    public String loadJSONFromAsset() {
+        String json = null;
+        try {
+
+            InputStream is = getAssets().open("sponsors.json");
+
+            int size = is.available();
+
+            byte[] buffer = new byte[size];
+
+            is.read(buffer);
+
+            is.close();
+
+            json = new String(buffer, "UTF-8");
+
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
 
     }
 
@@ -76,10 +104,10 @@ public class ExpertsDirectoryActivity extends BaseActivity {
         super.onResume();
         invalidateOptionsMenu();
         // If the user is attending remotely, redirect them to 'Explore'
-        if (!PrefUtils.isAttendeeAtVenue(this)) {
-            startActivity(new Intent(this, ExpertsDirectoryActivity.class));
-            finish();
-        }
+//        if (!PrefUtils.isAttendeeAtVenue(this)) {
+//            startActivity(new Intent(this, ExpertsDirectoryActivity.class));
+//            finish();
+//        }
     }
 
 
@@ -94,7 +122,9 @@ public class ExpertsDirectoryActivity extends BaseActivity {
         protected String doInBackground(String... params) {
             // TODO Auto-generated method stub
            if (!loadpref("firstjsonloadsucces")) {
-            // String url = "http://10.0.2.2:80/JSON/wall.php";
+               Log.d(LOG_TAG, "Sponsors  empty");
+
+               // String url = "http://10.0.2.2:80/JSON/wall.php";
             String url = "http://erp.saarang.org/api/mobile/display_spons/";
             // "api/mobile/walls/";
             List<NameValuePair> paramse = new ArrayList<NameValuePair>();
@@ -102,7 +132,6 @@ public class ExpertsDirectoryActivity extends BaseActivity {
             JSONObject json = jsonParser.makeHttpRequest(url,false, "GET", paramse,
                     null);
             if(json!=null) {
-
 
                 SharedPreferences sharedPrefjson = getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPrefjson.edit();
@@ -117,6 +146,7 @@ public class ExpertsDirectoryActivity extends BaseActivity {
 
             }
            }
+            else Log.d(LOG_TAG, "Sponsors empty");
             return null;
         }
 
@@ -132,126 +162,131 @@ public class ExpertsDirectoryActivity extends BaseActivity {
 
               SharedPreferences sharedPrefjson = getPreferences(Context.MODE_PRIVATE);
               String uname = sharedPrefjson.getString("user_name", null);
-              JSONArray theArray =null;
-              try {
-
-                  JSONObject jObj;
-                  jObj = new JSONObject(uname);
-
-
-                  theArray = jObj.getJSONArray("data");
-
-              } catch (JSONException e) {
-                  e.printStackTrace();
-              }
-
-              if (true) {
-                    final String id[] = new String[theArray.length()];
-                   final double priority[] = new double[theArray.length()];
-                    final String tittle[] = new String[theArray.length()];
-
-                    final String logolink[] = new String[theArray.length()];
-
-                    final String link[] = new String[theArray.length()];
-
-
-                    try {
-                        for (int i = 0; i < theArray.length(); i++) {
-                            JSONObject jsonInside = theArray.getJSONObject(i);
-                            id[i] = jsonInside.getString("id");
-                            priority[i] = jsonInside.getDouble("priority");
-                            tittle[i] = jsonInside.getString("title");
-                            logolink[i] = jsonInside.getString("logo");
-                            link[i] = jsonInside.getString("sponsor_link");
-
-
-                        }
-                        int input = theArray.length();
-
-
-                        for(int index = 0; index<input;index++)
-                        {
-                            for(int index1 = 0; index1<input-1;index1++)
-                            {
-                                if(priority[index1]>priority[index1+1])
-                                {
-
-                                    double temp_prio = priority[index1];
-                                    String temp_logolink = logolink[index1];
-                                    String temp_title =tittle[index1];
-                                    String temp_link =link[index1];
-                                    priority[index1] = priority[index1+1];
-                                    logolink[index1] = logolink[index1+1];
-                                    tittle[index1] = tittle[index1+1];
-                                    link[index1] = link[index1+1];
-
-
-                                    priority[index1+1] = temp_prio;
-                                    logolink[index1+1] = temp_logolink;
-                                    tittle[index1+1] = temp_title;
-                                    link[index1+1] = temp_link;
-
-
-
-
-                                }
-                            }
-                        }
-                        for (int i = 0; i < logolink.length / 2; i++) {
-                            String temp = logolink[i];
-                            logolink[i] = logolink[logolink.length - 1 - i];
-                            logolink[logolink.length - 1 - i] = temp;
-                        }
-                        for (int i = 0; i < tittle.length / 2; i++) {
-                            String temp = tittle[i];
-                            tittle[i] = tittle[tittle.length - 1 - i];
-                            tittle[tittle.length - 1 - i] = temp;
-                        }
-                        for (int i = 0; i < link.length / 2; i++) {
-                            String temp = link[i];
-                            link[i] = link[link.length - 1 - i];
-                            link[link.length - 1 - i] = temp;
-                        }
-
-
-
-                        for (int i=0 ;i<input;i++) {
-                            Log.d("", String.valueOf(priority[i]));
-
-                        }
-
-                        SponsorsList adapter = new SponsorsList(
-                                ExpertsDirectoryActivity.this, id, tittle, logolink, link);
-                        ListView list = (ListView) findViewById(
-                                R.id.listview);
-                        list.setAdapter(adapter);
-                        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-                            @Override
-                            public void onItemClick(AdapterView<?> parent,
-                                                    View view, int position, long useless_id) {
-
-                                String url = link[position];
-
-                                Uri webpage = Uri.parse(url);
-                                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-                                if (intent.resolveActivity(getPackageManager()) != null) {
-                                    startActivity(intent);
-                                }
-
-
-                            }
-                        });
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-                }
+              processJSON(uname);
 
             }
         }
     }
+
+    private void processJSON(String uname) {
+        JSONArray theArray =null;
+        try {
+
+            JSONObject jObj;
+            jObj = new JSONObject(uname);
+
+
+            theArray = jObj.getJSONArray("data");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        if (true) {
+            final String id[] = new String[theArray.length()];
+            final double priority[] = new double[theArray.length()];
+            final String tittle[] = new String[theArray.length()];
+
+            final String logolink[] = new String[theArray.length()];
+
+            final String link[] = new String[theArray.length()];
+
+
+            try {
+                for (int i = 0; i < theArray.length(); i++) {
+                    JSONObject jsonInside = theArray.getJSONObject(i);
+                    id[i] = jsonInside.getString("id");
+                    priority[i] = jsonInside.getDouble("priority");
+                    tittle[i] = jsonInside.getString("title");
+                    logolink[i] = jsonInside.getString("logo");
+                    link[i] = jsonInside.getString("sponsor_link");
+
+
+                }
+                int input = theArray.length();
+
+
+                for(int index = 0; index<input;index++)
+                {
+                    for(int index1 = 0; index1<input-1;index1++)
+                    {
+                        if(priority[index1]>priority[index1+1])
+                        {
+
+                            double temp_prio = priority[index1];
+                            String temp_logolink = logolink[index1];
+                            String temp_title =tittle[index1];
+                            String temp_link =link[index1];
+                            priority[index1] = priority[index1+1];
+                            logolink[index1] = logolink[index1+1];
+                            tittle[index1] = tittle[index1+1];
+                            link[index1] = link[index1+1];
+
+
+                            priority[index1+1] = temp_prio;
+                            logolink[index1+1] = temp_logolink;
+                            tittle[index1+1] = temp_title;
+                            link[index1+1] = temp_link;
+
+
+
+
+                        }
+                    }
+                }
+                for (int i = 0; i < logolink.length / 2; i++) {
+                    String temp = logolink[i];
+                    logolink[i] = logolink[logolink.length - 1 - i];
+                    logolink[logolink.length - 1 - i] = temp;
+                }
+                for (int i = 0; i < tittle.length / 2; i++) {
+                    String temp = tittle[i];
+                    tittle[i] = tittle[tittle.length - 1 - i];
+                    tittle[tittle.length - 1 - i] = temp;
+                }
+                for (int i = 0; i < link.length / 2; i++) {
+                    String temp = link[i];
+                    link[i] = link[link.length - 1 - i];
+                    link[link.length - 1 - i] = temp;
+                }
+
+
+
+                for (int i=0 ;i<input;i++) {
+                    Log.d("", String.valueOf(priority[i]));
+
+                }
+
+                SponsorsList adapter = new SponsorsList(
+                        ExpertsDirectoryActivity.this, id, tittle, logolink, link);
+                ListView list = (ListView) findViewById(
+                        R.id.listview);
+                list.setAdapter(adapter);
+                list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent,
+                                            View view, int position, long useless_id) {
+
+                        String url = link[position];
+
+                        Uri webpage = Uri.parse(url);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                        if (intent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(intent);
+                        }
+
+
+                    }
+                });
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
     private void savepref(String event,boolean key ){
 
         SharedPreferences fav= PreferenceManager.getDefaultSharedPreferences(this);

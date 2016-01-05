@@ -105,8 +105,8 @@ public class Config {
     public static final String WIFI_PASSPHRASE = "letsdothis";
 
     // GCM config
-    public static final String GCM_SERVER_PROD_URL = "https://light-lambda-567.appspot.com";
-    public static final String GCM_SERVER_URL = "https://light-lambda-567.appspot.com";
+    public static final String GCM_SERVER_PROD_URL = "https://saarang-app.appspot.com";
+    public static final String GCM_SERVER_URL = "https://saarang-app.appspot.com";
 
     // the GCM sender ID is the ID of the app in Google Cloud Console
     public static final String GCM_SENDER_ID = "318678647954";
