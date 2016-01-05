@@ -18,17 +18,22 @@ package com.saarang.samples.apps.iosched.ui;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.CursorLoader;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -55,13 +60,13 @@ import com.google.android.gms.maps.model.TileOverlay;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.android.gms.maps.model.TileProvider;
 import com.google.maps.android.ui.IconGenerator;
+import com.jakewharton.disklrucache.DiskLruCache;
 import com.saarang.samples.apps.iosched.provider.ScheduleContract;
 import com.saarang.samples.apps.iosched.util.AnalyticsManager;
+import com.saarang.samples.apps.iosched.util.LogUtils;
 import com.saarang.samples.apps.iosched.util.MapUtils;
 import com.saarang.samples.apps.iosched.util.PrefUtils;
 import com.saarang.samples.apps.iosched.util.UIUtils;
-import com.jakewharton.disklrucache.DiskLruCache;
-import com.saarang.samples.apps.iosched.util.LogUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -69,9 +74,6 @@ import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Locale;
-
-import static com.saarang.samples.apps.iosched.util.LogUtils.LOGD;
-import static com.saarang.samples.apps.iosched.util.LogUtils.makeLogTag;
 
 /**
  * Shows a map of the conference venue.
@@ -286,6 +288,27 @@ public class MapFragment extends com.google.android.gms.maps.MapFragment impleme
         }
     }
 
+    private void showDialogGPS() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setCancelable(false);
+        builder.setTitle("Enable Location");
+        builder.setMessage("Please enable Location services to get current location");
+        builder.setInverseBackgroundForced(true);
+        builder.setPositiveButton("Enable", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(
+                        new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            }
+        });
+        builder.setNegativeButton("Ignore", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
     /**
      * Clears the map and initialises all map variables that hold markers and overlays.
      */
@@ -318,6 +341,20 @@ public class MapFragment extends com.google.android.gms.maps.MapFragment impleme
         mMap.setOnIndoorStateChangeListener(this);
         mMap.setOnMapLoadedCallback(this);
         mMap.setInfoWindowAdapter(mInfoAdapter);
+        mMap.setMyLocationEnabled(true);  // to set the current locatio button
+        mMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
+            @Override
+            public boolean onMyLocationButtonClick() {
+                LocationManager mlocManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+                boolean enabled = mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+                if(!enabled) {
+                    showDialogGPS();
+                }
+
+                return false;
+            }
+        });
 
         if (resetCamera) {
             // Move camera directly to Moscone
@@ -326,7 +363,7 @@ public class MapFragment extends com.google.android.gms.maps.MapFragment impleme
 
         mMap.setIndoorEnabled(false);
         mMap.getUiSettings().setZoomControlsEnabled(false);
-        mMap.setMyLocationEnabled(false);
+
 
         Bundle data = getArguments();
         if (data != null && data.containsKey(BaseMapActivity.EXTRA_ROOM)) {
