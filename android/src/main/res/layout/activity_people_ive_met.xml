@@ -1109,7 +1109,7 @@
                             android:id="@+id/tv17"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Deepak Padamata"
+                            android:text="Shahidh K Muhammed"
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textSize="18dp" />
 
@@ -1117,7 +1117,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:src="@drawable/p_deepak" />
+                            android:src="@drawable/p_shahidh" />
                     </LinearLayout>
 
 

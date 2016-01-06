@@ -119,11 +119,11 @@ public class PeopleIveMetActivity extends BaseActivity {
             "ayoo",
             R.drawable.p_sreeharsha);
     ContactObject con14 = new ContactObject(
-            "Deepak Padamata",
-            "deepak@saarang.org",
-            "+919789107938",
+            "Shahidh K Muhammed",
+            "muhammedshahid.k@gmail.com",
+            "+919496362472",
             "ayoo",
-            R.drawable.p_deepak);
+            R.drawable.p_shahidh);
     ContactObject con15 = new ContactObject(
             "Aqel Ahammed",
             "aqel@saarang.org",
